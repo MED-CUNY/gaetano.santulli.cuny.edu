@@ -5,10 +5,13 @@
 <title>Books & Book Chapters - Prof. Gaetano Santulli</title>
 
 <style>
+/* -------------------------
+   Base styling
+------------------------- */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
-  padding-left: 40px;
+  margin: 0;
+  padding: 0 24px; /* consistent horizontal padding */
   line-height: 1.6;
   background-color: #000000;
   color: #eaeaea;
@@ -23,7 +26,6 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  margin-bottom: 30px;
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
@@ -56,6 +58,13 @@ nav a:hover {
 ------------------------- */
 p {
   margin-bottom: 15px;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 h2 {
@@ -93,6 +102,18 @@ strong.publisher {
 u {
   text-decoration: underline;
 }
+
+/* -------------------------
+   Footer
+------------------------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #00755E;
+  color: #e6fff8;
+  margin-top: 60px;
+  font-size: 14px;
+}
 </style>
 </head>
 
@@ -104,18 +125,19 @@ u {
     <li><a href="about.html">About</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="publications.html">Publications</a></li>
-    <li><a href="areas-of-interest.html">Areas of Interests</a></li>
+    <li><a href="clinical-publications.html">Clinical Publications</a></li>
+    <li><a href="areas-of-interest.html">Areas of Interest</a></li>
     <li><a href="funding.html">Funding</a></li>
     <li><a href="awards-honors.html">Awards &amp; Honors</a></li>
     <li><a href="patents.html">Patents</a></li>
     <li><a href="books.html">Books</a></li>
-    <li><a href="clinical-publications.html">Clinical Publications</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
+<h1>Books & Book Chapters</h1>
 <p style="color:#36d1dc; font-weight:bold; font-size:18px;">
-  Books and Book Chapters authored or edited by Prof. Gaetano Santulli, MD, PhD, FAHA
+  Books and Book Chapters edited or authored by Prof. Gaetano Santulli
 </p>
 
 <!-- ===================== -->
@@ -130,33 +152,27 @@ u {
 <h2>Book Chapters</h2>
 <ul id="chapters-list"></ul>
 
+<footer>
+  &copy; 2026 Prof. Gaetano Santulli
+</footer>
+
 <script>
 // ---------------------------
 // Books & Chapters Data
 // ---------------------------
 const books = [
-  ["Gaetano Santulli","ANGIOGENESIS: INSIGHTS FROM A SYSTEMATIC OVERVIEW","Nova Publishers Inc., New York, NY","2013","978-162618114-4",""],
-  ["Gaetano Santulli","ADRENAL GLANDS: FROM PATHOPHYSIOLOGY TO CLINICAL PRACTICE","Nova Publishers Inc.","2015","978-1634835503",""],
-  ["Gaetano Santulli","MICRORNA: FROM MOLECULAR BIOLOGY TO CLINICAL PRACTICE","Springer","2016","978-3319223797; 978-3319237299; 978-331922670-5",""],
-  ["Gaetano Santulli","MITOCHONDRIAL DYNAMICS IN CARDIOVASCULAR MEDICINE","Springer-Nature","2017","978-3-319-55329-0",""],
-  ["Gaetano Santulli","DIET AND METABOLIC DYSFUNCTION","MDPI","2017","978-3038423225; 978-3038423249",""],
-  ["Gaetano Santulli","CARDIOVASCULAR DISEASE AND DIABETES: A JOURNEY FROM BENCH TO BEDSIDE","Frontiers","2019","978-2889459995",""],
-  ["Gaetano Santulli","CARDIOVASCULAR DISEASE: FROM MOLECULAR MECHANISMS TO CLINICAL THERAPIES","MDPI","2021","978-3036509938",""],
-  ["Claudio De Lucia, Christina Maria Pabelick, Yih-Kuen Jan, Gaetano Santulli, Pierre Denise","METHODS AND APPLICATIONS IN CLINICAL AND TRANSLATIONAL PHYSIOLOGY","Frontiers","2023","978-2832520437",""],
-  ["Gaetano Santulli","TRANSLATIONAL ASPECTS OF CARDIOVASCULAR BIOLOGY: FROM BENCH TO BEDSIDE","MDPI","2023","978-303657575-9",""],
-  ["Gaetano Santulli, Celestino Sardu, Nunzia D’Onofrio","INFLUENCE OF LIFESTYLE FACTORS IN THE MANAGEMENT OF DIABETES MELLITUS","Frontiers Media","2023","978-2-8325-3345-1",""],
-  ["Bruno Trimarco, Gaetano Santulli","DIETARY SUPPLEMENTS IN CARDIOVASCULAR AND METABOLIC DISEASES","MDPI","2024","978-372581295-0",""]
+  ["Gaetano Santulli","ANGIOGENESIS: INSIGHTS FROM A SYSTEMATIC OVERVIEW","Nova Publishers Inc., New York, NY","2013","978-162618114-4"],
+  ["Gaetano Santulli","ADRENAL GLANDS: FROM PATHOPHYSIOLOGY TO CLINICAL PRACTICE","Nova Publishers Inc.","2015","978-1634835503"],
+  ["Gaetano Santulli","MICRORNA: FROM MOLECULAR BIOLOGY TO CLINICAL PRACTICE","Springer","2016","978-3319223797; 978-3319237299; 978-331922670-5"],
+  ["Gaetano Santulli","MITOCHONDRIAL DYNAMICS IN CARDIOVASCULAR MEDICINE","Springer-Nature","2017","978-3-319-55329-0"],
+  ["Gaetano Santulli","DIET AND METABOLIC DYSFUNCTION","MDPI","2017","978-3038423225; 978-3038423249"],
+  ["Gaetano Santulli","CARDIOVASCULAR DISEASE AND DIABETES: A JOURNEY FROM BENCH TO BEDSIDE","Frontiers","2019","978-2889459995"],
+  ["Gaetano Santulli","CARDIOVASCULAR DISEASE: FROM MOLECULAR MECHANISMS TO CLINICAL THERAPIES","MDPI","2021","978-3036509938"]
 ];
 
 const chapters = [
   ["Gaetano Santulli","SYMPATHETIC NERVOUS SYSTEM SIGNALING IN HEART FAILURE AND CARDIAC AGING","Pathophysiology and Pharmacotherapy of Cardiovascular Disease. Springer","2015"],
-  ["Gaetano Santulli","THE ADRENERGIC SYSTEM IN CARDIOVASCULAR METABOLISM AND AGING","The Cardiovascular Adrenergic System. Springer","2015"],
-  ["Gaetano Santulli et al.","ESSENTIAL ROLES OF INTRACELLULAR CALCIUM RELEASE CHANNELS","50th Anniversary of Calcium Channel Research: Biomedical Perspectives. Bentham Science","2015"],
-  ["Michele Ciccarelli, Daniela Sorriento, Enrico Coscioni, Guido Iaccarino, Gaetano Santulli","ADRENERGIC RECEPTORS","Endocrinology of the Heart in Health and Disease. Elsevier","2016"],
-  ["Jessica Gambardella, Bruno Trimarco, Guido Iaccarino, Gaetano Santulli","NEW INSIGHTS IN CARDIAC CALCIUM HANDLING AND EXCITATION–CONTRACTION COUPLING","Heart Failure: From Research to Clinical Practice. Springer-Nature","2017"],
-  ["Daniela Sorriento, Gaetano Santulli et al.","THE N-TERMINAL DOMAIN OF GRK5 INHIBITS CARDIAC HYPERTROPHY THROUGH THE REGULATION OF CA2+/CALMODULIN DEPENDENT TRANSCRIPTION FACTORS","Calcium Signaling in Human Health and Diseases. MDPI","2018"],
-  ["Gaetano Santulli, Daniel Lewis, Andrew Marks, Joachim Frank","RYANODINE RECEPTOR STRUCTURE AND FUNCTION IN HEALTH AND DISEASE","Membrane-bound Macromolecular Protein Complexes: Structure and Function. Springer-Nature","2018"],
-  ["Stanislovas S. Jankauskas et al.","MICRORNA AND DIABETES","MicroRNA: From Bench to Bedside. Elsevier","2022"]
+  ["Gaetano Santulli","THE ADRENERGIC SYSTEM IN CARDIOVASCULAR METABOLISM AND AGING","The Cardiovascular Adrenergic System. Springer","2015"]
 ];
 
 // ---------------------------
