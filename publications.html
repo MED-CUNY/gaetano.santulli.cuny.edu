@@ -18,11 +18,11 @@ body {
 }
 
 /* -------------------------
-   Navigation bar (slim)
+   Navigation bar (CONSISTENT WITH ABOUT PAGE)
 ------------------------- */
 nav {
   background-color: #00755E;
-  padding: 12px 24px; /* slim padding like Awards & Honors */
+  padding: 12px 24px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -35,6 +35,7 @@ nav ul {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 nav li {
@@ -51,6 +52,40 @@ nav a {
 
 nav a:hover {
   color: #d0f0e8;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 24px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  nav li {
+    margin: 10px 0;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  nav a {
+    font-size: 16px;
+  }
 }
 
 /* -------------------------
@@ -137,7 +172,8 @@ footer {
 
 <!-- Navigation -->
 <nav>
-  <ul>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul id="nav-menu">
     <li><a href="about.html">About</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="publications.html">Publications</a></li>
@@ -168,6 +204,11 @@ footer {
 </footer>
 
 <script>
+/* Mobile menu toggle */
+function toggleMenu() {
+  document.getElementById('nav-menu').classList.toggle('active');
+}
+
 /* ---------------------------
    Counter
 --------------------------- */
