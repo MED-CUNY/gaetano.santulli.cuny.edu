@@ -6,9 +6,6 @@
 <title>Areas of Interest - Prof. Gaetano Santulli</title>
 
 <style>
-/* -------------------------
-   Base styling
-------------------------- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -27,7 +24,6 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 nav ul {
@@ -35,7 +31,6 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -48,78 +43,36 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #d0f0e8;
-}
-
-/* Hamburger */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 24px;
-  position: absolute;
-  right: 20px;
-  top: 12px;
-}
-
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    display: none;
-  }
-  nav ul.active {
-    display: flex;
-  }
-  nav li {
-    margin: 10px 0;
-  }
-  .hamburger {
-    display: block;
-  }
-}
-
-/* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
-  nav a {
-    font-size: 16px;
-  }
 }
 
 /* -------------------------
-   Hero Image
+   Hero
 ------------------------- */
 .hero {
   width: 100%;
   height: 300px;
-  background: url('hero_areas.jpeg') center center / cover no-repeat;
+  background: url('hero_areas.jpeg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  text-shadow: 1px 1px 5px #000;
 }
 
 .hero h1 {
   font-size: 2.2em;
-  margin: 0;
 }
 
 /* -------------------------
    Content layout
 ------------------------- */
 .content {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 60px auto 80px;
   padding: 0 24px;
 }
 
 .area {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr 1fr;
   gap: 30px;
   margin-bottom: 70px;
   align-items: center;
@@ -143,8 +96,10 @@ nav a:hover {
   text-align: justify;
 }
 
-/* Responsive content */
-@media (max-width: 800px) {
+/* -------------------------
+   Responsive
+------------------------- */
+@media (max-width: 900px) {
   .area {
     grid-template-columns: 1fr;
     text-align: center;
@@ -163,153 +118,95 @@ footer {
   padding: 20px;
   background-color: #00755E;
   color: #e6fff8;
-  font-size: 14px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Navigation Bar -->
-<nav>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-  <ul id="nav-menu">
-    <li><a href="about.html">About</a></li>
-    <li><a href="team.html">Team</a></li>
-    <li><a href="publications.html">Publications</a></li>
-    <li><a href="areas-of-interest.html">Areas of Interests</a></li>
-    <li><a href="funding.html">Funding</a></li>
-    <li><a href="awards-honors.html">Awards &amp; Honors</a></li>
-    <li><a href="books.html">Books</a></li>
-    <li><a href="clinical-publications.html">Clinical Publications</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Hero Image -->
 <div class="hero">
   <h1>Areas of Interest</h1>
 </div>
 
-<!-- Main Content -->
 <div class="content">
 
-  <!-- ALL ORIGINAL CONTENT BELOW (UNCHANGED) -->
-
   <div class="area">
-    <img src="cardiovascular-disease.jpg" alt="Cardiovascular Disease">
+    <img src="cardiovascular-disease1.gif">
     <div>
       <h2>Cardiovascular Disease</h2>
-      <p>
-        We study the mechanisms underlying major cardiovascular disorders,
-        including heart failure, hypertension, and arrhythmias. Our work has
-        identified novel molecular targets to treat these conditions, and we
-        continue to lead innovative efforts aimed at improving cardiovascular
-        outcomes.
-      </p>
+      <p>We study the mechanisms underlying major cardiovascular disorders, including heart failure, hypertension, and arrhythmias.</p>
     </div>
+    <img src="cardiovascular-disease2.gif">
   </div>
 
   <div class="area">
-    <img src="metabolic-disorders.jpg" alt="Metabolic Disorders">
+    <img src="metabolic-disorders1.gif">
     <div>
       <h2>Metabolic Disorders</h2>
-      <p>
-        The laboratory investigates the key mechanisms underlying diabetes
-        mellitus, with a particular focus on pancreatic beta cell dysfunction,
-        metabolic stress, and organ cross-talk contributing to disease
-        progression.
-      </p>
+      <p>The laboratory investigates diabetes mellitus with a focus on beta cell dysfunction and metabolic stress.</p>
     </div>
+    <img src="metabolic-disorders2.jpg">
   </div>
 
   <div class="area">
-    <img src="non-coding-rna.jpg" alt="Non-coding RNA">
+    <img src="non-coding-rna1.jpg">
     <div>
       <h2>Non-coding RNA</h2>
-      <p>
-        We investigate the functional contribution of non-coding RNAs, including
-        microRNAs, to the pathophysiology of human disease. These molecules are
-        studied both as biomarkers and as potential therapeutic targets across
-        multiple disease contexts.
-      </p>
+      <p>We investigate microRNAs and other ncRNAs as biomarkers and therapeutic targets.</p>
     </div>
+    <img src="non-coding-rna2.jpg">
   </div>
 
   <div class="area">
-    <img src="calcium-signaling.jpg" alt="Calcium Signaling">
+    <img src="calcium1.gif">
     <div>
       <h2>Calcium</h2>
-      <p>
-        The Santulli Lab investigates the functional roles of calcium signaling
-        in health and disease across diverse tissues and cell types, with
-        implications for cardiovascular, metabolic, and neuromuscular disorders.
-      </p>
+      <p>Functional roles of calcium signaling across cardiovascular, metabolic, and neuromuscular systems.</p>
     </div>
+    <img src="calcium2.jpg">
   </div>
 
   <div class="area">
-    <img src="stem-cells.jpg" alt="Stem Cells">
+    <img src="stem-cells1.jpg">
     <div>
       <h2>Stem Cells</h2>
-      <p>
-        We investigate strategies to obtain mature human stem cells and apply
-        stem-cell–based approaches to human disease. To this aim, we leverage
-        state-of-the-art bioengineering and regenerative medicine technologies.
-      </p>
+      <p>Human stem cell maturation and regenerative medicine strategies.</p>
     </div>
+    <img src="stem-cells2.jpg">
   </div>
 
   <div class="area">
-    <img src="translational-medicine.jpg" alt="Translational Medicine">
+    <img src="translational1.jpg">
     <div>
       <h2>Translational Medicine</h2>
-      <p>
-        Fundamental discoveries generated in the laboratory are actively
-        translated to the clinical setting, with the ultimate goal of improving
-        diagnosis, treatment, and prevention of human disease.
-      </p>
+      <p>Bridging fundamental discoveries to clinical applications.</p>
     </div>
+    <img src="translational2.jpg">
   </div>
 
   <div class="area">
-    <img src="aging-longevity.jpg" alt="Aging and Longevity">
+    <img src="aging1.jpg">
     <div>
       <h2>Aging and Healthy Longevity</h2>
-      <p>
-        Our laboratory investigates the physiology and biology of aging,
-        including the molecular mechanisms underlying senescence. We also study
-        the roles of diet and nutrition in promoting healthy longevity.
-      </p>
+      <p>Molecular mechanisms of aging, senescence, diet, and nutrition.</p>
     </div>
+    <img src="aging2.jpg">
   </div>
 
   <div class="area">
-    <img src="clinical-research.jpg" alt="Clinical Research">
+    <img src="clinical1.jpg">
     <div>
       <h2>Clinical Research</h2>
-      <p>
-        We conduct clinical research in the fields of cardiovascular medicine,
-        diabetes, and aging. Please find
-        <a href="clinical-publications.html" style="color:#36d1dc; text-decoration:none;">
-          here our clinical publications
-        </a>.
-      </p>
+      <p>Clinical research in cardiovascular medicine, diabetes, and aging.</p>
     </div>
+    <img src="clinical2.jpg">
   </div>
 
 </div>
 
-<!-- Footer -->
 <footer>
   &copy; 2026 Prof. Gaetano Santulli
 </footer>
-
-<script>
-function toggleMenu() {
-  document.getElementById('nav-menu').classList.toggle('active');
-}
-</script>
 
 </body>
 </html>
