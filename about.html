@@ -1,202 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>About - Prof. Gaetano Santulli</title>
-
-<style>
-/* -------------------------
-   Base styling
-------------------------- */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #000000;
-  color: #eaeaea;
-}
-
-/* -------------------------
-   Navigation Bar with Hamburger
-------------------------- */
-nav {
-  background-color: #00755E;
-  padding: 12px 24px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-brand {
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  margin: 0 12px;
-}
-
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #d0f0e8;
-}
-
-.nav-toggle {
-  display: none;
-  font-size: 28px;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-}
-
-/* -------------------------
-   Page Content
-------------------------- */
-.content {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 24px;
-}
-
-.content h1 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.content h2 {
-  color: #36d1dc;
-  margin-top: 40px;
-}
-
-.content p {
-  margin-bottom: 15px;
-  color: #eaeaea;
-}
-
-.content a {
-  color: #36d1dc;
-  text-decoration: none;
-}
-
-.content a:hover {
-  text-decoration: underline;
-}
-
-/* -------------------------
-   Footer
-------------------------- */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #00755E;
-  color: #e6fff8;
-  margin-top: 60px;
-  font-size: 14px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- Navigation Bar -->
-<nav>
-  <div class="nav-container">
-    <div class="nav-brand">Santulli Lab</div>
-    <div class="nav-toggle" id="navToggle">&#9776;</div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="about.html">About</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="areas-of-interest.html">Areas of Interests</a></li>
-      <li><a href="funding.html">Funding</a></li>
-      <li><a href="awards-honors.html">Awards &amp; Honors</a></li>
-      <li><a href="books.html">Books</a></li>
-      <li><a href="clinical-publications.html">Clinical Publications</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+<!-- Hero Section -->
+<div class="hero">
+  <img src="hero-about.jpg" alt="Santulli Lab" class="hero-img">
+  <div class="hero-text">
+    <h1>About Prof. Gaetano Santulli</h1>
   </div>
-</nav>
-
-<!-- Page Content -->
-<div class="content">
-  <h1>About Prof. Gaetano Santulli</h1>
-
-  <p>Prof. Gaetano Santulli is a Full Professor of Medicine with a focus on Cardiology. He leads a dynamic laboratory dedicated to understanding cardiovascular and metabolic diseases, bridging basic research with clinical applications. His work spans molecular cardiology, vascular biology, and translational medicine, emphasizing innovation, rigor, and mentorship.</p>
-
-  <h2>Research Mission</h2>
-  <p>The lab aims to uncover the molecular mechanisms driving cardiovascular and metabolic disorders, with a particular focus on the role of calcium signaling, mitochondrial function, and microRNAs in cardiac health. Prof. Santulli’s team integrates advanced cellular, molecular, and computational approaches to accelerate discoveries from bench to bedside.</p>
-
-  <h2>Clinical Interests</h2>
-  <p>Clinically, Prof. Santulli maintains active involvement in patient care, specializing in complex cardiovascular conditions. He collaborates closely with clinicians and translational scientists to ensure that laboratory findings inform therapeutic strategies and improve patient outcomes.</p>
-
-  <h2>Mentorship</h2>
-  <p>Prof. Santulli is committed to training the next generation of scientists and clinicians. His mentorship philosophy emphasizes creativity, independence, and excellence, fostering a lab environment where team members can thrive academically and professionally.</p>
-
-  <h2>Contact</h2>
-  <p>For inquiries or collaborations, please visit the <a href="contact.html">Contact</a> page.</p>
 </div>
 
-<!-- Footer -->
-<footer>
-  &copy; 2026 Prof. Gaetano Santulli
-</footer>
+<style>
+.hero {
+  position: relative;
+  width: 100%;
+  max-height: 400px; /* adjust for laptops */
+  overflow: hidden;
+}
 
-<script>
-// Toggle navigation menu on small screens
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-</script>
+.hero-text {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  color: #ffffff;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
 
-</body>
-</html>
+@media (max-width: 768px) {
+  .hero {
+    max-height: 250px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.6em;
+  }
+}
+</style>
