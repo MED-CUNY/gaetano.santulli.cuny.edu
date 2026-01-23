@@ -93,14 +93,24 @@ nav a:hover {
 }
 
 /* -------------------------
-   Hero Image
+   Hero
 ------------------------- */
 .hero {
   width: 100%;
-  max-height: 350px;
-  object-fit: cover;
-  display: block;
+  height: 300px;
+  background: url('hero_books.jpeg') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 5px #000;
   margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 2.2em;
+  margin: 0;
+  text-align: center;
 }
 
 /* -------------------------
@@ -179,8 +189,10 @@ footer {
   </ul>
 </nav>
 
-<!-- Hero Image -->
-<img src="hero_books.jpeg" alt="Hero Image" class="hero">
+<!-- Hero -->
+<div class="hero">
+  <h1>Books</h1>
+</div>
 
 <!-- Page Content -->
 <div class="content">
