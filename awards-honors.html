@@ -19,7 +19,7 @@ body {
 }
 
 /* -------------------------
-   Navigation bar (IDENTICAL to About)
+   Navigation bar
 ------------------------- */
 nav {
   background-color: #00755E;
@@ -48,14 +48,13 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
-  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: #d0f0e8;
 }
 
-/* Hamburger menu */
+/* Hamburger */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -89,22 +88,31 @@ nav a:hover {
 }
 
 /* -------------------------
-   Hero Image
+   Hero
 ------------------------- */
 .hero {
   width: 100%;
-  max-height: 350px;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 40px;
+  height: 300px;
+  background: url('hero_awards.jpeg') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.hero h1 {
+  font-size: 2.2em;
+  margin: 0;
+  text-align: center;
 }
 
 /* -------------------------
-   Page Content
+   Content
 ------------------------- */
 .content {
   max-width: 900px;
-  margin: 0 auto 60px;
+  margin: 60px auto;
   padding: 0 24px;
 }
 
@@ -146,7 +154,7 @@ footer {
 
 <body>
 
-<!-- Navigation Bar -->
+<!-- Navigation -->
 <nav>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <ul id="nav-menu">
@@ -162,10 +170,12 @@ footer {
   </ul>
 </nav>
 
-<!-- Hero Image -->
-<img src="hero_awards.jpeg" alt="Hero Image" class="hero">
+<!-- Hero -->
+<div class="hero">
+  <h1>Awards &amp; Honors</h1>
+</div>
 
-<!-- Page Content -->
+<!-- Content -->
 <div class="content">
 
   <h2>Awards</h2>
@@ -184,19 +194,23 @@ footer {
     <li>2019: Finalist - AHA “Louis N. and Arnold M. Katz” Research Prize for Early Career Investigators</li>
     <li>2019: American Physiological Society “Cardiovascular Section New Investigator Award”</li>
     <li>2018: Full Professor of Cardiology - National Call for all Italian Universities (Qualification)</li>
+    <li>2017: Full Professor of Medicine - National Call for all Italian Universities (Qualification)</li>
+    <li>2017: Full Professor of Applied Biology - National Call for all Italian Universities (Qualification)</li>
+    <li>2017: Full Professor of Pathology - National Call for all Italian Universities (Qualification)</li>
     <li>2017: Best Italian Researcher under 40y - European Cultural Institute of Brussels</li>
-    <li>2017: Sentinel Rater - McMaster University, Hamilton (CA)</li>
-    <li>2016: Finalist - American Heart Association “Melvin L. Marcus” Young Investigator Award</li>
-    <li>2016: Young Investigator Award – ISSNAF</li>
-    <li>2016: Sentinel of Science – Clarivate Analytics</li>
-    <li>2016: Included among Top Italian Scientists Worldwide, V.I.A. Academy</li>
-    <li>2015: Four Highly Cited Papers – Thomson Reuters</li>
-    <li>2015: NIH K99 Pathway to Independence Award</li>
-    <li>2015: AHA Scientist Development Grant</li>
-    <li>2014: US Presidential Award for Precision Medicine</li>
-    <li>2013: “William Harvey” Award – Italian Society of Cardiology</li>
-    <li>2013: American Heart Association Postdoctoral Fellowship</li>
-    <li>2011: Young Investigator Award – Veronesi Foundation</li>
+    <li>2017: Sentinel Rater - McMaster University, Hamilton (CA): Clinical relevance rating system</li>
+    <li>2016: Finalist - American Heart Association, “Melvin L. Marcus” Young Investigator Award</li>
+    <li>2016: Young Investigator Award – ISSNAF (International Association of North America Scientists and Scholars)</li>
+    <li>2016: Sentinel of Science (top contributor to peer-review) – Clarivate Analytics, London</li>
+    <li>2016: Included among Top Italian Scientists Worldwide, V.I.A. Academy (highly cited scientists): H-index: >70</li>
+    <li>2016: Finalist - (ISHR) World meeting of cardiology – Young Investigator Award</li>
+    <li>2015: Four Highly Cited Papers (Thomson Reuters Corporation) - Top 1% in biomedicine</li>
+    <li>2015: NIH - K99 Pathway to Independence Award (High Score: 13 – Funded on First Submission)</li>
+    <li>2015: AHA Scientist Development Grant (SDG, High Score: 1.12 – Funded on First Submission)</li>
+    <li>2014: US Presidential Award for Precision Medicine (Endocrine Society International Meeting)</li>
+    <li>2013: “William Harvey” Award for Research in Cardiology (Italian Society of Cardiology)</li>
+    <li>2013: American Heart Association (AHA) Postdoctoral Fellowship (High Score: 1.1)</li>
+    <li>2011: Young Investigator Award, Veronesi Foundation for Cardiovascular Research</li>
   </ul>
 
   <h2>Professional Services</h2>
@@ -217,47 +231,29 @@ footer {
     </li>
   </ul>
 
-  <h2>Editorial Activities</h2>
-  <ul>
-    <li>Editor in Chief: Cell Cycle; Frontiers in Cardiovascular Endocrinology; Cardiovascular Diabetology – Endocrinology Reports</li>
-    <li>Associate Editor: BMC Medicine, Cardiovascular Diabetology, ESC Heart Failure, EJPC, Molecular Medicine, PLoS One</li>
-    <li>Editorial Board Member: JCI, Cardiovascular Research, JBC, Hypertension, JMCC, EHJ-CVP, BJP, JPET</li>
-  </ul>
-
   <h2>Patents</h2>
   <ul>
     <li>
-      <strong class="title">
-        CIRCULATING LEVELS OF ENDOTHELIAL MICRORNA PREDICT NEW-ONSET DIABETES IN COVID-19 AND LONG COVID
-      </strong><br>
+      <strong class="title">SGLT2 INHIBITORS PREVENT AND IMPROVE COGNITIVE DYSFUNCTION</strong><br>
+      <span class="meta">(#C-00001503)</span>
+    </li>
+
+    <li>
+      <strong class="title">CIRCULATING LEVELS OF miRNA-24 PREDICT CEREBROVASCULAR EVENTS IN COVID-19</strong><br>
+      <span class="meta">(C-00001482)</span>
+    </li>
+
+    <li>
+      <strong class="title">RETINOIC ACID RECEPTOR BETA2 AS A POTENTIAL TARGET FOR THE TREATMENT OF HEART FAILURE</strong><br>
+      <span class="meta">(P-612682-US)</span>
+    </li>
+
+    <li>
+      <strong class="title">CIRCULATING LEVELS OF ENDOTHELIAL MICRORNA PREDICT NEW-ONSET DIABETES IN COVID-19 AND LONG COVID</strong><br>
       <span class="meta">
-        (C-00001500-2022)<br>
+        (C-00001500)<br>
         US-A1: 20240287608 &nbsp;|&nbsp; Application No.: 18/424483<br>
         International Classes: C12Q1/6883
-      </span>
-    </li>
-    <li>
-      <strong class="title">
-        CIRCULATING LEVELS OF miRNA-24 PREDICT CEREBROVASCULAR EVENTS IN COVID-19
-      </strong><br>
-      <span class="meta">
-        (C-00001482-2021)
-      </span>
-    </li>
-    <li>
-      <strong class="title">
-        SGLT2 INHIBITORS PREVENT AND IMPROVE COGNITIVE DYSFUNCTION
-      </strong><br>
-      <span class="meta">
-        (#C-00001503-2022)
-      </span>
-    </li>
-    <li>
-      <strong class="title">
-        RETINOIC ACID RECEPTOR BETA2 AS A POTENTIAL TARGET FOR THE TREATMENT OF HEART FAILURE
-      </strong><br>
-      <span class="meta">
-        (P-612682-US-2022)
       </span>
     </li>
   </ul>
