@@ -70,7 +70,7 @@ nav a:hover {
    Page content
 ------------------------- */
 .content {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 60px auto;
   padding: 0 24px;
   text-align: center;
@@ -83,33 +83,36 @@ h1 {
 }
 
 /* -------------------------
-   PI Section
+   Team layout
 ------------------------- */
-.pi-section {
+.team-row {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 50px;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 20px;
 }
 
-.pi-card {
-  width: 260px;
+.team-member {
   background-color: #111111;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 15px;
+  border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
-  margin: 12px;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+  flex: 0 0 auto;
+  transition: transform 0.2s;
 }
 
-.pi-photo {
-  width: 140px;
-  height: 140px;
-  border-radius: 6px;
-  object-fit: cover;
-  object-position: center;
-  margin: 0 auto 12px auto;
-  background-color: #333;
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+.pi-member {
+  width: 300px;
+}
+
+.line2-member, .line3-member {
+  width: 220px;
 }
 
 .member-name {
@@ -124,52 +127,16 @@ h1 {
   color: #cccccc;
 }
 
-.pi-metrics {
-  font-size: 0.85em;
-  margin-top: 6px;
-}
-
-.pi-metrics a {
-  color: #36d1dc;
-  text-decoration: none;
+/* For members without photos (lines 4+) */
+.member-name-only {
   font-weight: bold;
+  color: #36d1dc;
+  font-size: 1em;
 }
 
-.pi-metrics a:hover {
-  text-decoration: underline;
-}
-
-/* -------------------------
-   Team Grid
-------------------------- */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 25px;
-}
-
-.team-member {
-  background-color: #111111;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(255,255,255,0.1);
-  transition: transform 0.2s;
-}
-
-.team-member:hover {
-  transform: scale(1.05);
-}
-
-.member-photo {
-  width: 110px;
-  height: 110px;
-  border-radius: 6px;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  margin: 0 auto 12px auto;
-  background-color: #333;
+.member-role-only {
+  font-size: 0.85em;
+  color: #d0d0d0;
 }
 
 /* -------------------------
@@ -185,79 +152,21 @@ footer {
 }
 
 /* -------------------------
-   Responsive: Tablet
+   Responsive
 ------------------------- */
-@media (max-width: 1024px) and (min-width: 600px) {
-  h1 {
-    font-size: 28px;
-  }
-
-  .pi-card {
-    width: 220px;
-    margin: 10px;
-  }
-
-  .member-photo {
-    width: 90px;
-    height: 90px;
-  }
-
-  nav a {
-    font-size: 16px;
-  }
+@media (max-width: 1024px) {
+  .pi-member { width: 260px; }
+  .line2-member, .line3-member { width: 180px; }
+  .team-member { padding: 12px; }
 }
 
-/* -------------------------
-   Responsive: Mobile / iPhone
-------------------------- */
-@media (max-width: 599px) {
-  h1 {
-    font-size: 24px;
-  }
+@media (max-width: 768px) {
+  .team-row { flex-direction: column; align-items: center; }
+  .pi-member, .line2-member, .line3-member { width: 90%; }
+}
 
-  .pi-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pi-card {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-
-  .pi-photo {
-    width: 120px;
-    height: 120px;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .member-photo {
-    width: 100px;
-    height: 100px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    display: none;
-    width: 100%;
-    align-items: center;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  nav li {
-    margin: 8px 0;
-  }
-
-  .hamburger {
-    display: block;
-  }
+@media (max-width: 480px) {
+  h1 { font-size: 26px; }
 }
 </style>
 </head>
@@ -283,11 +192,18 @@ footer {
 <div class="content">
   <h1>Meet Our Team</h1>
 
-  <!-- PI Section -->
-  <div id="pi-section" class="pi-section"></div>
+  <!-- PI Row -->
+  <div class="team-row" id="pi-row"></div>
 
-  <!-- Team Members Grid -->
-  <div id="team-grid" class="team-grid"></div>
+  <!-- Line 2 -->
+  <div class="team-row" id="line2-row"></div>
+
+  <!-- Line 3 -->
+  <div class="team-row" id="line3-row"></div>
+
+  <!-- Line 4+ (members only with names & roles) -->
+  <div class="team-row" id="line4plus-row"></div>
+
 </div>
 
 <footer>
@@ -295,66 +211,96 @@ footer {
 </footer>
 
 <script>
-// Data arrays
+// ---------------------------
+// PI
 const pi = {
   name: "Prof. Gaetano Santulli",
   role1: "Full Professor of Medicine (Cardiology)",
   role2: "Principal Investigator",
-  photo: "santulli.jpg",
-  hindex: 106,
-  scholarLink: "https://scholar.google.com/citations?user=IX4IYaEAAAAJ&hl=en&inst=151474670492416252"
+  photo: "santulli.jpg"
 };
 
-const team = [
-  {name: "Dr. Jessica Gambardella", role: "Assistant Professor", photo: "gambardella.jpg"},
-  {name: "Dr. Stanislovas S. Jankauskas", role: "Assistant Professor", photo: "jankauskas.jpg"},
-  {name: "Dr. Pasquale Mone", role: "Assistant Professor", photo: "mone.jpg"},
-  {name: "Dr. Fahimeh Varzideh", role: "Assistant Professor", photo: "varzideh.jpg"},
-  {name: "Dr. Urna Kansakar", role: "Postdoctoral Fellow", photo: "kansakar.jpg"},
-  {name: "Dr. Shivangi Pande", role: "Postdoctoral Fellow", photo: "pande.jpg"},
-  {name: "Grace Wilkon", role: "Lab Technician", photo: "wilkon.jpg"},
-  {name: "Dr. Hanna Brown", role: "Postdoctoral Fellow", photo: "brown.jpg"},
-  {name: "Dr. Isabella Martinez", role: "Research Scientist", photo: "martinez.jpg"},
-  {name: "Jennifer Thompson", role: "Graduate Student", photo: "thompson.jpg"},
-  {name: "Karen White", role: "Lab Technician", photo: "white.jpg"},
-  {name: "Dr. Liam Johnson", role: "Postdoctoral Fellow", photo: "johnson.jpg"},
-  {name: "Dr. Mia Anderson", role: "Research Scientist", photo: "anderson.jpg"},
-  {name: "Noah Lee", role: "Graduate Student", photo: "lee.jpg"},
-  {name: "Olivia Kim", role: "Lab Technician", photo: "kim.jpg"},
-  {name: "Dr. Patrick Clark", role: "Postdoctoral Fellow", photo: "clark.jpg"},
-  {name: "Dr. Quinn Evans", role: "Research Scientist", photo: "evans.jpg"},
-  {name: "Rachel Scott", role: "Graduate Student", photo: "scott.jpg"},
-  {name: "Samuel Harris", role: "Lab Technician", photo: "harris.jpg"},
-  {name: "Dr. Tina Lewis", role: "Research Scientist", photo: "lewis.jpg"}
-];
-
-// Render PI
-const piSection = document.getElementById('pi-section');
-piSection.innerHTML = `
-  <div class="team-member pi-card">
-    <img src="${pi.photo}" alt="${pi.name}" class="pi-photo">
+const piRow = document.getElementById('pi-row');
+piRow.innerHTML = `
+  <div class="team-member pi-member">
+    <img src="${pi.photo}" alt="${pi.name}" style="width:140px;height:140px;border-radius:6px;margin-bottom:12px;">
     <div class="member-name">${pi.name}</div>
     <div class="member-role">${pi.role1}</div>
     <div class="member-role">${pi.role2}</div>
-    <div class="pi-metrics">
-      Hirsch Index: <a href="${pi.scholarLink}" target="_blank" rel="noopener noreferrer">${pi.hindex}</a>
-    </div>
   </div>
 `;
 
-// Render team
-const teamGrid = document.getElementById('team-grid');
-team.forEach(member => {
-  const memberDiv = document.createElement('div');
-  memberDiv.className = 'team-member';
-  memberDiv.innerHTML = `
-    <img src="${member.photo}" alt="${member.name}" class="member-photo">
-    <div class="member-name">${member.name}</div>
-    <div class="member-role">${member.role}</div>
+// ---------------------------
+// Line 2
+const line2Members = [
+  {name: "Dr. Jessica Gambardella", role: "Assistant Professor", photo:"gambardella.jpg"},
+  {name: "Dr. Stanislovas S. Jankauskas", role: "Assistant Professor", photo:"jankauskas.jpg"},
+  {name: "Dr. Fahimeh Varzideh", role: "Assistant Professor", photo:"varzideh.jpg"}
+];
+
+const line2Row = document.getElementById('line2-row');
+line2Members.forEach(m => {
+  line2Row.innerHTML += `
+    <div class="team-member line2-member">
+      <img src="${m.photo}" alt="${m.name}" style="width:110px;height:110px;border-radius:6px;margin-bottom:12px;">
+      <div class="member-name">${m.name}</div>
+      <div class="member-role">${m.role}</div>
+    </div>
   `;
-  teamGrid.appendChild(memberDiv);
 });
 
+// ---------------------------
+// Line 3
+const line3Members = [
+  {name: "Dr. Pasquale Mone", role: "Assistant Professor", photo:"mone.jpg"},
+  {name: "Dr. Urna Kansakar", role: "Postdoctoral Fellow", photo:"kansakar.jpg"},
+  {name: "Dr. Shivangi Pande", role: "Postdoctoral Fellow", photo:"pande.jpg"}
+];
+
+const line3Row = document.getElementById('line3-row');
+line3Members.forEach(m => {
+  line3Row.innerHTML += `
+    <div class="team-member line3-member">
+      <img src="${m.photo}" alt="${m.name}" style="width:110px;height:110px;border-radius:6px;margin-bottom:12px;">
+      <div class="member-name">${m.name}</div>
+      <div class="member-role">${m.role}</div>
+    </div>
+  `;
+});
+
+// ---------------------------
+// Line 4+ (names & roles only, 4 per row)
+const line4plusMembers = [
+  {name:"Rachel Scott", role:"Graduate Student"},
+  {name:"Scott Wilson", role:"MD Resident"},
+  {name:"Roberta Avvisato", role:"PhD Student"},
+  {name:"Mahaba Eiwaz", role:"PhD Student"},
+  {name:"Ayobami Adebayo", role:"MD Student"},
+  {name:"Ghaith Al Tibi", role:"MD Student"},
+  {name:"Federica A. Cerasuolo", role:"PhD Student"},
+  {name:"Vasvi Bhutani", role:"MD Student"},
+  {name:"Cheryl Tung", role:"MD Student"},
+  {name:"Emanuele Farroni", role:"Visiting MD Student"},
+  {name:"Nicole Romero", role:"Intern"},
+  {name:"Marco Savino", role:"MD Student"},
+  {name:"Urja Jain", role:"Intern"},
+  {name:"Yifei Qin", role:"Intern"},
+  {name:"Lauren Soderquist", role:"Intern"},
+  {name:"Luigi Savino", role:"MD Student"},
+  {name:"Brandon Wang", role:"MD Student"}
+];
+
+const line4plusRow = document.getElementById('line4plus-row');
+line4plusMembers.forEach(m => {
+  line4plusRow.innerHTML += `
+    <div class="team-member" style="width:220px;">
+      <div class="member-name-only">${m.name}</div>
+      <div class="member-role-only">${m.role}</div>
+    </div>
+  `;
+});
+
+// ---------------------------
 // Hamburger toggle
 function toggleMenu() {
   document.getElementById('nav-menu').classList.toggle('active');
