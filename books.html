@@ -6,70 +6,108 @@
 <title>Books & Book Chapters – Prof. Gaetano Santulli</title>
 
 <style>
+/* -------------------------
+   Reset & Base Styling
+------------------------- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
   background-color: #0B0B0B;
   color: #B8BDC7;
-  line-height: 1.6;
 }
 
-/* Navigation */
+/* -------------------------
+   Navigation bar (IDENTICAL TO AWARDS)
+------------------------- */
 nav {
   background-color: #00755E;
   padding: 12px 24px;
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 nav ul {
   list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-nav li { margin-right: 22px; }
+nav li {
+  margin-right: 22px;
+}
 
 nav a {
   color: #ffffff;
-  font-weight: bold;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
 }
 
-nav a:hover { color: #d0f0e8; }
+nav a:hover {
+  color: #d0f0e8;
+}
 
+/* Hamburger */
 .hamburger {
   display: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 24px;
   position: absolute;
   right: 20px;
   top: 12px;
-  font-size: 24px;
-  cursor: pointer;
 }
 
 @media (max-width: 600px) {
-  nav ul { display: none; flex-direction: column; }
-  nav ul.active { display: flex; }
-  .hamburger { display: block; }
+  nav ul {
+    flex-direction: column;
+    display: none;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  nav li {
+    margin: 10px 0;
+  }
+  .hamburger {
+    display: block;
+  }
 }
 
-/* Hero */
+@media (min-width: 601px) and (max-width: 1024px) {
+  nav a {
+    font-size: 16px;
+  }
+}
+
+/* -------------------------
+   Hero
+------------------------- */
 .hero {
+  width: 100%;
   height: 300px;
-  background: url('hero_books.jpeg') center / cover no-repeat;
+  background: url('hero_books.jpeg') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
 }
 
-.hero h1 { font-size: 2.2em; }
+.hero h1 {
+  font-size: 2.2em;
+  margin: 0;
+}
 
-/* Content */
+/* -------------------------
+   Content
+------------------------- */
 .content {
   max-width: 900px;
   margin: 40px auto;
@@ -86,14 +124,18 @@ h2 {
   margin-top: 40px;
 }
 
-ul { padding-left: 20px; }
+ul {
+  padding-left: 20px;
+}
 
 li {
   margin-bottom: 16px;
   transition: transform 0.2s;
 }
 
-li:hover { transform: scale(1.02); }
+li:hover {
+  transform: scale(1.02);
+}
 
 a {
   color: #F5F5F5;
@@ -105,9 +147,13 @@ a:hover {
   text-decoration: underline;
 }
 
-.publisher { color: #6FCF97; }
+.publisher {
+  color: #6FCF97;
+}
 
-/* Counter */
+/* -------------------------
+   Counter
+------------------------- */
 .page-counter {
   margin-top: 40px;
   padding: 14px;
@@ -117,7 +163,9 @@ a:hover {
   border-radius: 10px;
 }
 
-/* Footer */
+/* -------------------------
+   Footer
+------------------------- */
 footer {
   background-color: #00755E;
   color: #e6fff8;
@@ -129,24 +177,29 @@ footer {
 
 <body>
 
+<!-- Navigation -->
 <nav>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <ul id="nav-menu">
     <li><a href="about.html">About</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="publications.html">Publications</a></li>
+    <li><a href="areas-of-interest.html">Areas of Interests</a></li>
+    <li><a href="funding.html">Funding</a></li>
+    <li><a href="awards-honors.html">Awards &amp; Honors</a></li>
     <li><a href="books.html">Books</a></li>
     <li><a href="clinical-publications.html">Clinical Publications</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
+<!-- Hero -->
 <div class="hero">
   <h1>Books</h1>
 </div>
 
+<!-- Content -->
 <div class="content">
-<h1></h1>
 
 <h2>Books</h2>
 <ul>
@@ -317,14 +370,18 @@ footer {
 <div class="page-counter">
   Page Visits: <span id="counter">0</span>
 </div>
+
 </div>
 
-<footer>&copy; 2026 Prof. Gaetano Santulli</footer>
+<footer>
+  &copy; 2026 Prof. Gaetano Santulli
+</footer>
 
 <script>
 function toggleMenu() {
   document.getElementById('nav-menu').classList.toggle('active');
 }
+
 let count = localStorage.getItem("booksPageCounter") || 3200;
 count++;
 localStorage.setItem("booksPageCounter", count);
