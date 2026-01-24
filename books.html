@@ -6,354 +6,295 @@
 <title>Books & Book Chapters – Prof. Gaetano Santulli</title>
 
 <style>
-/* -------------------------
-   Base styling
-------------------------- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
   background-color: #0B0B0B;
   color: #B8BDC7;
+  line-height: 1.6;
 }
 
-/* -------------------------
-   Navigation bar
-------------------------- */
+/* Navigation */
 nav {
   background-color: #00755E;
   padding: 12px 24px;
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
-nav li {
-  margin-right: 22px;
-}
+nav li { margin-right: 22px; }
 
 nav a {
   color: #ffffff;
-  text-decoration: none;
   font-weight: bold;
-  font-size: 14px;
-  transition: color 0.3s ease;
+  text-decoration: none;
 }
 
-nav a:hover {
-  color: #d0f0e8;
-}
+nav a:hover { color: #d0f0e8; }
 
 .hamburger {
   display: none;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 24px;
   position: absolute;
   right: 20px;
   top: 12px;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    display: none;
-  }
-  nav ul.active {
-    display: flex;
-  }
-  nav li {
-    margin: 10px 0;
-  }
-  .hamburger {
-    display: block;
-  }
+  nav ul { display: none; flex-direction: column; }
+  nav ul.active { display: flex; }
+  .hamburger { display: block; }
 }
 
-/* -------------------------
-   Hero
-------------------------- */
+/* Hero */
 .hero {
-  width: 100%;
   height: 300px;
-  background: url('hero_books.jpeg') center center / cover no-repeat;
+  background: url('hero_books.jpeg') center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  text-shadow: 1px 1px 5px #000;
-  margin-bottom: 40px;
 }
 
-.hero h1 {
-  font-size: 2.2em;
-  margin: 0;
-}
+.hero h1 { font-size: 2.2em; }
 
-/* -------------------------
-   Page content
-------------------------- */
+/* Content */
 .content {
   max-width: 900px;
-  margin: 0 auto 60px auto;
+  margin: 40px auto;
   padding: 0 24px;
 }
 
-.content h1 {
+h1 {
   color: #F5F5F5;
   text-align: center;
 }
 
-.content h2 {
+h2 {
   color: #4DD0E1;
   margin-top: 40px;
 }
 
-.content ul {
-  padding-left: 20px;
-}
+ul { padding-left: 20px; }
 
-.content li {
+li {
   margin-bottom: 16px;
   transition: transform 0.2s;
 }
 
-.content li:hover {
-  transform: scale(1.02);
-}
+li:hover { transform: scale(1.02); }
 
-.content a {
+a {
   color: #F5F5F5;
   text-decoration: none;
-  transition: color 0.3s;
 }
 
-.content a:hover {
+a:hover {
   color: #8EC9FF;
   text-decoration: underline;
 }
 
-strong.publisher {
-  color: #6FCF97;
-}
+.publisher { color: #6FCF97; }
 
-u {
-  text-decoration: underline;
-}
-
-/* -------------------------
-   Page counter
-------------------------- */
+/* Counter */
 .page-counter {
-  margin-top: 50px;
-  padding: 15px;
+  margin-top: 40px;
+  padding: 14px;
   text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
   background: linear-gradient(90deg, #36d1dc, #5b86e5);
+  color: white;
   border-radius: 10px;
 }
 
-/* -------------------------
-   Footer
-------------------------- */
+/* Footer */
 footer {
-  text-align: center;
-  padding: 20px;
   background-color: #00755E;
   color: #e6fff8;
-  font-size: 14px;
+  text-align: center;
+  padding: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Navigation -->
 <nav>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <ul id="nav-menu">
     <li><a href="about.html">About</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="publications.html">Publications</a></li>
-    <li><a href="areas-of-interest.html">Areas of Interests</a></li>
-    <li><a href="funding.html">Funding</a></li>
-    <li><a href="awards-honors.html">Awards &amp; Honors</a></li>
     <li><a href="books.html">Books</a></li>
     <li><a href="clinical-publications.html">Clinical Publications</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<!-- Hero -->
 <div class="hero">
   <h1>Books</h1>
 </div>
 
-<!-- Content -->
 <div class="content">
-  <h1>Books &amp; Book Chapters</h1>
+<h1>Books &amp; Book Chapters</h1>
 
-  <p><strong>Books and Book Chapters edited or authored by Prof. Gaetano Santulli</strong></p>
+<!-- BOOKS -->
+<h2>Books</h2>
+<ul>
+  <li>
+    <a href="https://www.amazon.com/Dietary-Supplements-Cardiovascular-Metabolic-Diseases/dp/3725812950" target="_blank">
+      Dietary Supplements in Cardiovascular and Metabolic Diseases
+    </a><br>
+    Editors: Bruno Trimarco, <strong><u>Gaetano Santulli</u></strong> (2024)<br>
+    <span class="publisher">MDPI</span>. ISBN: 978-3-7258-1295-0
+  </li>
 
-  <h2>Books</h2>
-  <ul id="books-list"></ul>
+  <li>
+    <a href="https://books.google.com/books/about/Methods_and_Applications_in_Clinical_and.html?id=t565EAAAQBAJ" target="_blank">
+      Methods and Applications in Clinical and Translational Physiology
+    </a><br>
+    Editors: Claudio De Lucia, Christina Maria Pabelick, Yih-Kuen Jan, <strong><u>Gaetano Santulli</u></strong>, Pierre Denise (2023)<br>
+    <span class="publisher">Frontiers</span>. ISBN: 9782832520437
+  </li>
 
-  <h2>Book Chapters (Selection)</h2>
-  <ul id="chapters-list"></ul>
+  <li>
+    <a href="https://www.amazon.com/Translational-Aspects-Cardiovascular-Biology-Bedside/dp/3036575758" target="_blank">
+      Translational Aspects of Cardiovascular Biology: From Bench to Bedside
+    </a><br>
+    Editor: <strong><u>Gaetano Santulli</u></strong> (2023)<br>
+    <span class="publisher">MDPI</span>. ISBN: 978-3-0365-7575-9
+  </li>
 
-  <div class="page-counter">
-    Page Visits: <span id="counter">0</span>
-  </div>
+  <li>
+    <a href="https://www.frontiersin.org/research-topics/47044/influence-of-lifestyle-factors-in-the-management-of-diabetes-mellitus/magazine" target="_blank">
+      Influence of Lifestyle Factors in the Management of Diabetes Mellitus
+    </a><br>
+    Editors: <strong><u>Gaetano Santulli</u></strong>, Celestino Sardu, Nunzia D’Onofrio (2023)<br>
+    <span class="publisher">Frontiers Media</span>. ISBN: 978-2-8325-3345-1
+  </li>
+
+  <li>
+    <a href="https://www.amazon.com/Cardiovascular-Disease-Molecular-Mechanisms-Therapies/dp/3036509933" target="_blank">
+      Cardiovascular Disease: From Molecular Mechanisms to Clinical Therapies
+    </a><br>
+    Editor: <strong><u>Gaetano Santulli</u></strong> (2021)<br>
+    <span class="publisher">MDPI</span>. ISBN: 978-3-0365-0993-8
+  </li>
+
+  <li>
+    <a href="https://www.amazon.com/Cardiovascular-Disease-Diabetes-Journey-Bench/dp/2889459995" target="_blank">
+      Cardiovascular Disease and Diabetes: A Journey from Bench to Bedside
+    </a><br>
+    Editor: <strong><u>Gaetano Santulli</u></strong> (2019)<br>
+    <span class="publisher">Frontiers</span>. ISBN: 9782889459995
+  </li>
+
+  <li>
+    <a href="http://www.mdpi.com/books/pdfview/book/269" target="_blank">
+      Diet and Metabolic Dysfunction
+    </a><br>
+    Editor: <strong><u>Gaetano Santulli</u></strong> (2017)<br>
+    <span class="publisher">MDPI</span>. ISBN: 978-3038423225, 978-3038423249
+  </li>
+
+  <li>
+    <a href="http://www.springer.com/us/book/9783319553290" target="_blank">
+      Mitochondrial Dynamics in Cardiovascular Medicine
+    </a><br>
+    Editor: <strong><u>Gaetano Santulli</u></strong> (2017)<br>
+    <span class="publisher">Springer Nature</span>. ISBN: 978-3-319-55329-0
+  </li>
+
+  <li>
+    <a href="http://www.springer.com/us/book/9783319226705" target="_blank">
+      microRNA: From Molecular Biology to Clinical Practice
+    </a><br>
+    Editor: <strong><u>Gaetano Santulli</u></strong> (2016)<br>
+    <span class="publisher">Springer</span>. ISBN: 978-3319223797; 978-3319237299; 978-3-319-22670-5
+  </li>
+
+  <li>
+    <a href="https://novapublishers.com/shop/adrenal-glands-from-pathophysiology-to-clinical-evidence/" target="_blank">
+      Adrenal Glands: From Pathophysiology to Clinical Evidence
+    </a><br>
+    Editor: <strong><u>Gaetano Santulli</u></strong> (2015)<br>
+    <span class="publisher">Nova Publishers</span>. ISBN: 978-1634835503
+  </li>
+
+  <li>
+    <a href="https://novapublishers.com/shop/angiogenesis-insights-from-a-systematic-overview/" target="_blank">
+      Angiogenesis: Insights from a Systematic Overview
+    </a><br>
+    Editor: <strong><u>Gaetano Santulli</u></strong> (2013)<br>
+    <span class="publisher">Nova Publishers</span>. ISBN: 978-1-62618-114-4
+  </li>
+</ul>
+
+<!-- CHAPTERS -->
+<h2>Book Chapters (Selection)</h2>
+<ul>
+  <li><strong>Gaetano Santulli</strong>, et al.
+    <a href="https://shop.elsevier.com/books/microrna/xiao/978-0-323-89774-7" target="_blank">
+      microRNAs in diabetes
+    </a>. In <em>MicroRNA: From Bench to Bedside</em>. Elsevier (2022).
+  </li>
+
+  <li><strong>Gaetano Santulli</strong>, Daniel Lewis, Andrew Marks, Joachim Frank.
+    <a href="https://www.springer.com/gp/book/9789811077562" target="_blank">
+      Ryanodine receptor structure and function in health and disease
+    </a>. Springer Nature (2018).
+  </li>
+
+  <li>Daniela Sorriento, <strong>Gaetano Santulli</strong>, et al.
+    <a href="https://www.researchgate.net/publication/323654822" target="_blank">
+      The Amino-Terminal Domain of GRK5 Inhibits Cardiac Hypertrophy
+    </a>. MDPI (2018).
+  </li>
+
+  <li>Jessica Gambardella et al.
+    <a href="https://www.researchgate.net/publication/320062765" target="_blank">
+      New Insights in Cardiac Calcium Handling
+    </a>. Springer Nature (2017).
+  </li>
+
+  <li>M. Ciccarelli et al.
+    <a href="https://www.researchgate.net/publication/307856141" target="_blank">
+      Adrenergic Receptors
+    </a>. Elsevier (2016).
+  </li>
+
+  <li><strong>Gaetano Santulli</strong>.
+    <a href="http://link.springer.com/chapter/10.1007/978-3-319-15961-4_5" target="_blank">
+      Sympathetic Nervous System Signaling in Heart Failure and Cardiac Aging
+    </a>. Springer (2015).
+  </li>
+</ul>
+
+<div class="page-counter">
+  Page Visits: <span id="counter">0</span>
+</div>
 </div>
 
-<footer>
-  &copy; 2026 Prof. Gaetano Santulli
-</footer>
+<footer>&copy; 2026 Prof. Gaetano Santulli</footer>
 
 <script>
 function toggleMenu() {
   document.getElementById('nav-menu').classList.toggle('active');
 }
-
-/* ---------------------------
-   Page counter
---------------------------- */
 let count = localStorage.getItem("booksPageCounter") || 3200;
 count++;
 localStorage.setItem("booksPageCounter", count);
 document.getElementById("counter").textContent = count;
-
-/* ---------------------------
-   Books (newest → oldest)
---------------------------- */
-const books = [
-  {
-    title: "Dietary Supplements in Cardiovascular and Metabolic Diseases",
-    link: "https://www.amazon.com/Dietary-Supplements-Cardiovascular-Metabolic-Diseases/dp/3725812950",
-    publisher: "MDPI",
-    year: 2024,
-    isbn: "978-3-7258-1295-0"
-  },
-  {
-    title: "Methods and Applications in Clinical and Translational Physiology",
-    link: "https://books.google.com/books/about/Methods_and_Applications_in_Clinical_and.html?id=t565EAAAQBAJ",
-    publisher: "Frontiers",
-    year: 2023,
-    isbn: "9782832520437"
-  },
-  {
-    title: "Translational Aspects of Cardiovascular Biology: From Bench to Bedside",
-    link: "https://www.amazon.com/Translational-Aspects-Cardiovascular-Biology-Bedside/dp/3036575758",
-    publisher: "MDPI",
-    year: 2023,
-    isbn: "978-3-0365-7575-9"
-  },
-  {
-    title: "Influence of Lifestyle Factors in the Management of Diabetes Mellitus",
-    link: "https://www.frontiersin.org/research-topics/47044/influence-of-lifestyle-factors-in-the-management-of-diabetes-mellitus/magazine",
-    publisher: "Frontiers Media",
-    year: 2023,
-    isbn: "978-2-8325-3345-1"
-  },
-  {
-    title: "Cardiovascular Disease: From Molecular Mechanisms to Clinical Therapies",
-    link: "https://www.amazon.com/Cardiovascular-Disease-Molecular-Mechanisms-Therapies/dp/3036509933",
-    publisher: "MDPI",
-    year: 2021,
-    isbn: "978-3-0365-0993-8"
-  },
-  {
-    title: "Cardiovascular Disease and Diabetes: A Journey from Bench to Bedside",
-    link: "https://www.amazon.com/Cardiovascular-Disease-Diabetes-Journey-Bench/dp/2889459995",
-    publisher: "Frontiers",
-    year: 2019,
-    isbn: "9782889459995"
-  },
-  {
-    title: "Diet and Metabolic Dysfunction",
-    link: "http://www.mdpi.com/books/pdfview/book/269",
-    publisher: "MDPI",
-    year: 2017,
-    isbn: "978-3038423225, 978-3038423249"
-  },
-  {
-    title: "Mitochondrial Dynamics in Cardiovascular Medicine",
-    link: "http://www.springer.com/us/book/9783319553290",
-    publisher: "Springer Nature",
-    year: 2017,
-    isbn: "978-3-319-55329-0"
-  },
-  {
-    title: "microRNA: From Molecular Biology to Clinical Practice",
-    link: "http://www.springer.com/us/book/9783319226705",
-    publisher: "Springer",
-    year: 2016,
-    isbn: "978-3319223797, 978-3319237299, 978-3-319-22670-5"
-  },
-  {
-    title: "Adrenal Glands: From Pathophysiology to Clinical Evidence",
-    link: "https://novapublishers.com/shop/adrenal-glands-from-pathophysiology-to-clinical-evidence/",
-    publisher: "Nova Publishers",
-    year: 2015,
-    isbn: "978-1634835503"
-  },
-  {
-    title: "Angiogenesis: Insights from a Systematic Overview",
-    link: "https://novapublishers.com/shop/angiogenesis-insights-from-a-systematic-overview/",
-    publisher: "Nova Publishers",
-    year: 2013,
-    isbn: "978-1-62618-114-4"
-  }
-];
-
-const chapters = [
-  ["Gaetano Santulli et al.", "microRNAs in diabetes", "https://shop.elsevier.com/books/microrna/xiao/978-0-323-89774-7", "MicroRNA: From Bench to Bedside", "Elsevier", 2022],
-  ["Gaetano Santulli et al.", "Ryanodine receptor structure and function in health and disease", "https://www.springer.com/gp/book/9789811077562", "Membrane-bound Macromolecular Protein Complexes", "Springer Nature", 2018],
-  ["Gaetano Santulli et al.", "The adrenergic system in cardiovascular metabolism and aging", "http://link.springer.com/chapter/10.1007/978-3-319-13680-6_6", "The Cardiovascular Adrenergic System", "Springer", 2018],
-  ["Gaetano Santulli et al.", "Sympathetic Nervous System Signaling in Heart Failure and Cardiac Aging", "http://link.springer.com/chapter/10.1007/978-3-319-15961-4_5", "Pathophysiology and Pharmacotherapy of Cardiovascular Disease", "Springer", 2015]
-];
-
-function renderBooks() {
-  const ul = document.getElementById("books-list");
-  books.forEach(b => {
-    ul.innerHTML += `
-      <li>
-        <a href="${b.link}" target="_blank"><strong>${b.title}</strong></a><br>
-        <u>Editor:</u> <strong><u>Gaetano Santulli</u></strong><br>
-        <strong class="publisher">${b.publisher}</strong>, ${b.year}<br>
-        ISBN: ${b.isbn}
-      </li>`;
-  });
-}
-
-function renderChapters() {
-  const ul = document.getElementById("chapters-list");
-  chapters.forEach(c => {
-    ul.innerHTML += `
-      <li>
-        <strong>${c[0]}</strong>. 
-        <a href="${c[2]}" target="_blank">${c[1]}</a>. 
-        In <em>${c[3]}</em>. 
-        ${c[4]} (${c[5]}).
-      </li>`;
-  });
-}
-
-renderBooks();
-renderChapters();
 </script>
 
 </body>
