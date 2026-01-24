@@ -13,12 +13,12 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #000000;
-  color: #eaeaea;
+  background-color: #0B0B0B; /* near-black charcoal */
+  color: #B8BDC7;            /* authors gray */
 }
 
 /* -------------------------
-   Navigation bar (CONSISTENT WITH ABOUT PAGE)
+   Navigation bar (UNCHANGED)
 ------------------------- */
 nav {
   background-color: #00755E;
@@ -100,24 +100,35 @@ nav a:hover {
 .content h1 {
   text-align: center;
   margin-bottom: 40px;
-  color: #ffffff;
+  color: #F5F5F5; /* title off-white */
 }
 
 .content p {
   margin-bottom: 20px;
 }
 
+/* Links: title + DOI */
 .content a {
-  color: #36d1dc;
+  color: #F5F5F5; /* title default */
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .content a:hover {
-  color: #5b86e5;
+  color: #8EC9FF; /* title hover */
   text-decoration: underline;
 }
 
+/* DOI links specifically */
+.content li a[href^="https://doi.org"] {
+  color: #4DD0E1; /* DOI cyan */
+}
+
+.content li a[href^="https://doi.org"]:hover {
+  color: #7FE9FF; /* DOI hover */
+}
+
+/* Publication list */
 .content ul {
   list-style: none;
   padding-left: 0;
@@ -132,10 +143,12 @@ nav a:hover {
   transform: scale(1.02);
 }
 
+/* Journal */
 strong.journal {
-  color: #36d1dc;
+  color: #6FCF97; /* emerald */
 }
 
+/* Underline for highlighted author */
 u {
   text-decoration: underline;
 }
@@ -149,8 +162,8 @@ u {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
-  color: white;
-  background: linear-gradient(90deg, #36d1dc, #5b86e5);
+  color: #0B0B0B;
+  background: linear-gradient(90deg, #6FCF97, #4DD0E1);
   border-radius: 10px;
 }
 
