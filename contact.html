@@ -55,7 +55,7 @@ nav a:hover {
   color: #d0f0e8;
 }
 
-/* Hamburger menu */
+/* Hamburger */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -105,84 +105,112 @@ nav a:hover {
 }
 
 .content h1 {
-  color: #ffffff;
   text-align: center;
-  margin-bottom: 15px;
   font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.content h2 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #36d1dc;
+  letter-spacing: 0.5px;
 }
 
 .content p {
-  color: #cccccc;
-  font-size: 17px;
-  margin-bottom: 25px;
   text-align: center;
+  font-size: 17px;
+  color: #cccccc;
   line-height: 1.8;
+}
+
+/* -------------------------
+   Divider above donations
+------------------------- */
+.section-divider {
+  width: 120px;
+  height: 3px;
+  margin: 70px auto 35px;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  border-radius: 3px;
 }
 
 /* -------------------------
    Contact Info Box
 ------------------------- */
 .contact-info {
-  background-color: rgba(54, 209, 220, 0.05);
+  background-color: rgba(54, 209, 220, 0.06);
   border-left: 5px solid #36d1dc;
-  border-radius: 10px;
-  padding: 25px 20px;
-  margin: 40px 0;
+  border-radius: 14px;
+  padding: 28px 22px;
+  margin: 45px 0;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-info:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(54,209,220,0.3);
-}
-
-.contact-info a {
-  color: #36d1dc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.contact-info a:hover {
-  color: #5b86e5;
-  text-decoration: underline;
 }
 
 /* -------------------------
-   Donation Section
+   Donation Cards
 ------------------------- */
 .donation {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
-.donation div {
+.donation-card {
+  background-color: rgba(91, 134, 229, 0.15);
+  padding: 28px;
+  border-radius: 18px;
+  width: 240px;
   text-align: center;
-  background-color: rgba(91, 134, 229, 0.1);
-  padding: 20px;
-  border-radius: 12px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.donation div:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(255,255,255,0.25);
+.donation-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(54,209,220,0.35);
 }
 
-.donation img {
-  width: 150px;
-  height: 150px;
-  border-radius: 12px;
+.donation-card img {
+  width: 140px;
+  height: 140px;
+  border-radius: 14px;
+  margin-bottom: 18px;
   border: 2px solid #36d1dc;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.donation img:hover {
+/* Button-style link */
+.donate-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.donate-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(54,209,220,0.4);
+  box-shadow: 0 8px 20px rgba(91,134,229,0.5);
+}
+
+/* -------------------------
+   Fade-in on scroll
+------------------------- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* -------------------------
@@ -193,7 +221,7 @@ footer {
   padding: 25px;
   background-color: #00755E;
   color: #e6fff8;
-  margin-top: 60px;
+  margin-top: 70px;
   font-size: 14px;
 }
 </style>
@@ -201,7 +229,7 @@ footer {
 
 <body>
 
-<!-- Navigation Bar -->
+<!-- Navigation -->
 <nav>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <ul id="nav-menu">
@@ -217,46 +245,50 @@ footer {
   </ul>
 </nav>
 
-<!-- Hero Image -->
 <img src="hero_contact.jpeg" alt="Contact Hero" class="hero">
 
-<!-- Page Content -->
 <div class="content">
 
-  <h1>Contact Prof. Gaetano Santulli</h1>
-  <p>For inquiries regarding research, collaborations, or speaking engagements, please use the contact information below.</p>
+  <h1 class="fade-in">Contact Prof. Gaetano Santulli</h1>
+  <p class="fade-in">
+    For inquiries regarding research, collaborations, or speaking engagements,
+    please use the contact information below.
+  </p>
 
-  <!-- Contact Info Box -->
-  <div class="contact-info">
+  <div class="contact-info fade-in">
     <p><strong>Prof. Gaetano Santulli, MD, PhD, FAHA</strong></p>
-    <p>Medical Professor - Clinical (Full Professor - Cardiologist)</p>
-    <p>City University of New York - School of Medicine, Manhattan, NY</p>
+    <p>Medical Professor – Clinical (Full Professor – Cardiologist)</p>
+    <p>City University of New York – School of Medicine, Manhattan, NY</p>
     <p>Email: <a href="mailto:gsantulli001@gmail.com">gsantulli001@gmail.com</a></p>
   </div>
 
-  <!-- Donation Section -->
-  <h2>Support Our Work</h2>
-  <p>If you would like to support our research and educational activities, you can donate (via PayPal or Venmo)</p>
-  <p>You will be acknowledged in our publications!</p>
+  <div class="section-divider"></div>
+
+  <h2 class="fade-in">Support Our Work</h2>
+  <p class="fade-in">
+    If you would like to support our research and educational activities,
+    you can donate using the options below.
+  </p>
+  <p class="fade-in"><em>You will be acknowledged in our publications.</em></p>
 
   <div class="donation">
-    <div>
-      <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=gsantulli001@gmail.com" target="_blank">
-        <img src="paypal.png" alt="PayPal QR Code">
+    <div class="donation-card fade-in">
+      <img src="paypal.png" alt="PayPal QR">
+      <a class="donate-btn" href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=gsantulli001@gmail.com" target="_blank">
+        Donate via PayPal
       </a>
-      <p>PayPal</p>
     </div>
-    <div>
-      <a href="https://venmo.com/code?user_id=3952225357400095618&created=1769036924.992568" target="_blank">
-        <img src="venmo.png" alt="Venmo QR Code">
+
+    <div class="donation-card fade-in">
+      <img src="venmo.png" alt="Venmo QR">
+      <a class="donate-btn" href="https://venmo.com/code?user_id=3952225357400095618&created=1769036924.992568" target="_blank">
+        Donate via Venmo
       </a>
-      <p>Venmo</p>
     </div>
   </div>
 
 </div>
 
-<!-- Footer -->
 <footer>
   &copy; 2026 Prof. Gaetano Santulli
 </footer>
@@ -265,6 +297,17 @@ footer {
 function toggleMenu() {
   document.getElementById('nav-menu').classList.toggle('active');
 }
+
+/* Fade-in observer */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 
 </body>
