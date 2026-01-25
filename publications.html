@@ -253,7 +253,30 @@ footer {
   <div class="recent-box" id="recent-box">
     <h2>Recently Accepted Papers</h2>
     <ul id="recent-list">
-      <!-- unchanged -->
+
+      <li data-title="SGLT2 inhibitors but not other antidiabetic drugs improve frailty in older adults with diabetes and HFpEF">
+        <strong>SGLT2 inhibitors but not other antidiabetic drugs improve frailty in older adults with diabetes and HFpEF.</strong><br>
+        <em>Pasquale Mone, Marco Ferrone, Francesco Spione, Dimitris Christodoulakis, Francesco Melillo, Antonio Rainone, Domenico Ponticelli, Tullio Tesorio, Marco Di Mauro, Anna Marro, Gaetano Macina, Maria Morgante, Germano Guerra, <u>Gaetano Santulli</u></em><br>
+        <strong class="journal">CARDIOVASCULAR RESEARCH</strong>. 2026. <em>In press.</em>
+      </li>
+
+      <li data-title="TimeVault turns vault particles into molecular memory of transcriptional states">
+        <strong>TimeVault turns vault particles into molecular memory of transcriptional states: how to decode the cellular black box.</strong><br>
+        <strong class="journal">CELL CYCLE</strong>. 2026. <em>In press.</em>
+      </li>
+
+      <li data-title="Autonomic neurotransmission in cardiovascular regulation and pathophysiology">
+        <strong>Autonomic neurotransmission in cardiovascular regulation and pathophysiology.</strong><br>
+        <em>Fahimeh Varzideh, Stanislovas S. Jankauskas, Pasquale Mone, Urna Kansakar, <u>Gaetano Santulli</u></em><br>
+        <strong class="journal">FRONTIERS IN NEUROSCIENCE</strong>. 2026. <em>In press.</em>
+      </li>
+
+      <li data-title="Orforglipron: a comprehensive review of an oral small-molecule GLP-1 receptor agonist">
+        <strong>Orforglipron: a comprehensive review of an oral small-molecule GLP-1 receptor agonist for obesity and type 2 diabetes.</strong><br>
+        <em>Urna Kansakar, Stanislovas S. Jankauskas, Shivangi Pande, Pasquale Mone, Fahimeh Varzideh, <u>Gaetano Santulli</u></em><br>
+        <strong class="journal">INTERNATIONAL JOURNAL OF MOLECULAR SCIENCES</strong>. 2026. <em>In press.</em>
+      </li>
+
     </ul>
   </div>
 
@@ -322,8 +345,8 @@ async function fetchPubMed() {
 
   let html = "<ul>";
   let pubNumber = total;   // newest = highest number
-
   const step = 200;
+
   for (let i = 0; i < total; i += step) {
     const efetch = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&query_key=${key}&WebEnv=${webenv}&retstart=${i}&retmax=${step}&retmode=xml`;
     const xml = new DOMParser().parseFromString(await (await fetch(efetch)).text(), "text/xml");
