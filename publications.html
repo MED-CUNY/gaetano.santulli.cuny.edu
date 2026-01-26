@@ -74,59 +74,22 @@ nav a:hover { color: #d0f0e8; }
 .content ul { list-style: none; padding-left: 0; }
 
 /* =========================
-   HOVER CARDS (APPLIED FROM BOOKS PAGE)
+   HOVER CARDS
 ========================= */
-.content li {
+.content li,
+.recent-box li {
   position: relative;
   margin-bottom: 22px;
   padding: 16px 18px 16px 22px;
   background-color: #111111;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(255,255,255,0.08);
-  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.25s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.content li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 12px;
-  bottom: 12px;
-  width: 4px;
-  background: linear-gradient(180deg, #4DD0E1, #6FCF97);
-  border-radius: 4px;
-  opacity: 0;
-  transform: scaleY(0.3);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.content li:hover,
-.content li:focus-within {
-  transform: scale(1.02);
-  background-color: #1a1a1a;
-  box-shadow: 0 6px 14px rgba(255,255,255,0.16);
-}
-
-.content li:hover::before,
-.content li:focus-within::before {
-  opacity: 1;
-  transform: scaleY(1);
-}
-
-/* =========================
-   RECENT BOX STYLE UPDATE
-========================= */
-.recent-box li {
-  position: relative;
-  padding: 16px 18px 16px 22px;
-  background-color: #111111;
-  border-radius: 8px;
-  box-shadow: 0 3px 6px rgba(255,255,255,0.08);
-  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
+.content li::before,
 .recent-box li::before {
   content: "";
   position: absolute;
@@ -141,30 +104,67 @@ nav a:hover { color: #d0f0e8; }
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
+/* Correct hover transform */
+.content li:hover,
+.content li:focus-within,
 .recent-box li:hover,
 .recent-box li:focus-within {
-  transform: scale(1.02);
+  transform: scale(1.02) !important;
   background-color: #1a1a1a;
   box-shadow: 0 6px 14px rgba(255,255,255,0.16);
 }
 
+.content li:hover::before,
+.content li:focus-within::before,
 .recent-box li:hover::before,
 .recent-box li:focus-within::before {
   opacity: 1;
   transform: scaleY(1);
 }
 
-/* =========================
-   OTHER ELEMENTS
-========================= */
 strong.journal { color: #6FCF97; }
 u { text-decoration: underline; }
 
+/* =========================
+   RECENT BOX
+========================= */
+.recent-box {
+  margin: 40px 0 60px 0;
+  padding: 30px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(111,207,151,0.12), rgba(77,208,225,0.12));
+  box-shadow: 0 0 25px rgba(111,207,151,0.25);
+  animation: fadeInUp 1s ease-out forwards;
+}
+.recent-box h2 {
+  text-align: center;
+  font-size: 26px;
+  background: linear-gradient(90deg, #6FCF97, #4DD0E1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s infinite linear;
+}
+.recent-box li {
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(0,0,0,0.35);
+  transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+}
+
+/* =========================
+   COVER BOX
+========================= */
 .cover-box { text-align: center; margin: 50px 0; opacity: 0; transform: translateY(25px); animation: fadeInUp 1s ease-out forwards; animation-delay: 0.2s; }
 
+/* =========================
+   ANIMATIONS
+========================= */
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes shimmer { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
 
+/* =========================
+   PAGE COUNTER
+========================= */
 .page-counter {
   margin-top: 50px;
   padding: 15px;
@@ -176,6 +176,9 @@ u { text-decoration: underline; }
   border-radius: 10px;
 }
 
+/* =========================
+   FOOTER
+========================= */
 footer {
   text-align: center;
   padding: 20px;
@@ -183,6 +186,25 @@ footer {
   color: #e6fff8;
   margin-top: 60px;
   font-size: 14px;
+}
+
+/* =========================
+   PRINT FRIENDLY
+========================= */
+@media print {
+  body { background: #fff; color: #000; }
+  nav, .hamburger, .page-counter, footer { display: none !important; }
+  .content li, .recent-box li {
+    background: #fff !important;
+    box-shadow: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    padding: 4px 0;
+  }
+  .content li::before,
+  .recent-box li::before { display: none !important; }
+  a { color: #000; text-decoration: underline; }
+  .cover-box img { max-width: 80%; height: auto; }
 }
 </style>
 </head>
@@ -234,7 +256,7 @@ footer {
 
 <div class="cover-box">
 <h2>Selection of Covers of our Best Papers!</h2>
-<img src="covers.png" alt="Covers of Journals where the Santulli Lab published" style="max-width:100%; height:auto;">
+<img src="covers.png" alt="Covers of Journals where the Santulli Lab published">
 </div>
 
 <div id="publications">
