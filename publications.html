@@ -26,6 +26,7 @@ body {
   color: #B8BDC7;
 }
 
+/* Navigation */
 nav {
   background-color: #00755E;
   padding: 12px 24px;
@@ -50,6 +51,7 @@ nav a:hover { color: #d0f0e8; }
 
 @media (min-width: 601px) and (max-width: 1024px) { nav a { font-size: 16px; } }
 
+/* Page content */
 .content {
   max-width: 1000px;
   margin: 60px auto;
@@ -64,6 +66,8 @@ nav a:hover { color: #d0f0e8; }
 .content li a[href^="https://doi.org"]:hover { color: #7FE9FF; }
 
 .content ul { list-style: none; padding-left: 0; }
+
+/* Hover animation: EXACT match with clinical publications page */
 .content li {
   margin-bottom: 22px;
   padding: 12px;
@@ -74,15 +78,16 @@ nav a:hover { color: #d0f0e8; }
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
 }
-
 .content li:hover {
   transform: scale(1.02);
   background-color: #1a1a1a;
   box-shadow: 0 5px 12px rgba(255,255,255,0.15);
 }
+
 strong.journal { color: #6FCF97; }
 u { text-decoration: underline; }
 
+/* Recent box */
 .recent-box {
   margin: 40px 0 60px 0;
   padding: 30px;
@@ -103,13 +108,15 @@ u { text-decoration: underline; }
   padding: 18px;
   border-radius: 14px;
   background: rgba(0,0,0,0.35);
-  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+  transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
 }
 .recent-box li:hover {
-  transform: scale(1.02) translateY(-2px) rotateX(1.2deg);
-  box-shadow: 0 4px 12px rgba(255,255,255,0.15);
+  transform: scale(1.02);
+  background-color: #1a1a1a;
+  box-shadow: 0 5px 12px rgba(255,255,255,0.15);
 }
 
+/* Cover box */
 .cover-box { text-align: center; margin: 50px 0; opacity: 0; transform: translateY(25px); animation: fadeInUp 1s ease-out forwards; animation-delay: 0.2s; }
 
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
@@ -125,7 +132,15 @@ u { text-decoration: underline; }
   background: linear-gradient(90deg, #6FCF97, #4DD0E1);
   border-radius: 10px;
 }
-footer { text-align: center; padding: 20px; background-color: #00755E; color: #e6fff8; margin-top: 60px; font-size: 14px; }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #00755E;
+  color: #e6fff8;
+  margin-top: 60px;
+  font-size: 14px;
+}
 </style>
 </head>
 
@@ -201,7 +216,7 @@ count++;
 localStorage.setItem("pubPageCounter", count);
 document.getElementById("counter").textContent = count;
 
-/* PubMed fetch with hover tilt preserved */
+/* PubMed fetch */
 const query = "((((((Santulli, G[Author]) NOT corrigendum[Title]) NOT spider[Title]) NOT erratum[Title]) NOT habitat[Title]) NOT dogs[Title]) NOT introduction[Title]) NOT correction[Title]) NOT violence[Title]";
 const replacements = {
  "ECLINICALMEDICINE":"LANCET eCLINICALMEDICINE",
@@ -255,7 +270,7 @@ async function fetchPubMed() {
     });
   }
 
-  let html="<ul>";
+  let html="<ul class='content'>";
   let pubNumber=articles.length;
   articles.forEach((art,index)=>{
     html+=`<li style="animation: fadeInUp 0.8s ease-out forwards; animation-delay:${index*0.03}s">
