@@ -349,7 +349,7 @@ async function fetchPubMed() {
   let pubNumber = total;   // newest = highest number
   const step = 200;
 
-  for (let i = 0; i < total; i += step) {
+  for (let i = total - step; i >= 0; i -= step) {
     const efetch = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&query_key=${key}&WebEnv=${webenv}&retstart=${i}&retmax=${step}&retmode=xml`;
     const xml = new DOMParser().parseFromString(await (await fetch(efetch)).text(), "text/xml");
 
