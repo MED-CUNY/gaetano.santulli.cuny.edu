@@ -17,9 +17,6 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 <style>
-/* -------------------------
-   Base styling
-------------------------- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -29,9 +26,6 @@ body {
   color: #B8BDC7;
 }
 
-/* -------------------------
-   Navigation bar (IDENTICAL TO BOOKS PAGE)
-------------------------- */
 nav {
   background-color: #00755E;
   padding: 12px 24px;
@@ -65,7 +59,6 @@ nav a:hover {
   color: #d0f0e8;
 }
 
-/* Hamburger */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -77,30 +70,12 @@ nav a:hover {
 }
 
 @media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    display: none;
-  }
-  nav ul.active {
-    display: flex;
-  }
-  nav li {
-    margin: 10px 0;
-  }
-  .hamburger {
-    display: block;
-  }
+  nav ul { flex-direction: column; display: none; }
+  nav ul.active { display: flex; }
+  nav li { margin: 10px 0; }
+  .hamburger { display: block; }
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
-  nav a {
-    font-size: 16px;
-  }
-}
-
-/* -------------------------
-   Page content
-------------------------- */
 .content {
   max-width: 1000px;
   margin: 60px auto;
@@ -119,28 +94,14 @@ nav a:hover {
   color: #F5F5F5;
 }
 
-.content p {
-  margin-bottom: 20px;
-}
-
-/* Links */
 .content a {
   color: #F5F5F5;
   text-decoration: none;
-  transition: color 0.3s;
 }
 
 .content a:hover {
   color: #8EC9FF;
   text-decoration: underline;
-}
-
-.content li a[href^="https://doi.org"] {
-  color: #4DD0E1;
-}
-
-.content li a[href^="https://doi.org"]:hover {
-  color: #7FE9FF;
 }
 
 .content ul {
@@ -150,24 +111,14 @@ nav a:hover {
 
 .content li {
   margin-bottom: 22px;
-  transition: transform 0.2s;
-}
-
-.content li:hover {
-  transform: scale(1.02);
 }
 
 strong.journal {
   color: #6FCF97;
 }
 
-u {
-  text-decoration: underline;
-}
+u { text-decoration: underline; }
 
-/* -------------------------
-   Recently Accepted Publications
-------------------------- */
 .recent-box {
   margin: 40px 0 60px 0;
   padding: 30px;
@@ -183,28 +134,13 @@ u {
   background: linear-gradient(90deg, #6FCF97, #4DD0E1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 3s infinite linear;
-}
-
-.recent-box li {
-  padding: 18px;
-  border-radius: 14px;
-  background: rgba(0,0,0,0.35);
 }
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(25px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes shimmer {
-  from { background-position: 0% 50%; }
-  to   { background-position: 100% 50%; }
-}
-
-/* -------------------------
-   Counter
-------------------------- */
 .page-counter {
   margin-top: 50px;
   padding: 15px;
@@ -216,9 +152,6 @@ u {
   border-radius: 10px;
 }
 
-/* -------------------------
-   Footer
-------------------------- */
 footer {
   text-align: center;
   padding: 20px;
@@ -232,7 +165,6 @@ footer {
 
 <body>
 
-<!-- Navigation -->
 <nav>
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <ul id="nav-menu">
@@ -249,44 +181,58 @@ footer {
 </nav>
 
 <div class="content">
-  <h1>Publications</h1>
+<h1>Publications</h1>
 
-  <div class="recent-box" id="recent-box">
-    <h2>Recently Accepted Papers</h2>
-    <ul id="recent-list">
-      <!-- unchanged -->
-    </ul>
-  </div>
+<div class="recent-box" id="recent-box">
+<h2>Recently Accepted Papers</h2>
+<ul id="recent-list">
 
-  <div id="publications">
-    <p>Loading publications...</p>
-  </div>
+<li data-title="SGLT2 inhibitors but not other antidiabetic drugs improve frailty in older adults with diabetes and HFpEF">
+<strong>SGLT2 inhibitors but not other antidiabetic drugs improve frailty in older adults with diabetes and HFpEF.</strong><br>
+<em>Pasquale Mone, Marco Ferrone, Francesco Spione, Dimitris Christodoulakis, Francesco Melillo, Antonio Rainone, Domenico Ponticelli, Tullio Tesorio, Marco Di Mauro, Anna Marro, Gaetano Macina, Maria Morgante, Germano Guerra, <u>Gaetano Santulli</u></em><br>
+<strong class="journal">CARDIOVASCULAR RESEARCH</strong>. 2026. <em>In press.</em>
+</li>
 
-  <!-- ✅ ONLY ADDITION -->
-  <div style="text-align: center; margin: 50px 0; animation: fadeInUp 1.2s ease-out forwards;">
-    <h2 style="margin-bottom: 25px; color: #F5F5F5;">
-      Covers of Journals where the Santulli Lab published
-    </h2>
-    <img src="cover.png"
-         alt="Covers of Journals where the Santulli Lab published"
-         style="max-width: 100%; height: auto;">
-  </div>
+<li data-title="TimeVault turns vault particles into molecular memory of transcriptional states">
+<strong>TimeVault turns vault particles into molecular memory of transcriptional states: how to decode the cellular black box.</strong><br>
+<strong class="journal">CELL CYCLE</strong>. 2026. <em>In press.</em>
+</li>
 
-  <div class="page-counter">
-    Page Visits: <span id="counter">0</span>
-  </div>
+<li data-title="Autonomic neurotransmission in cardiovascular regulation and pathophysiology">
+<strong>Autonomic neurotransmission in cardiovascular regulation and pathophysiology.</strong><br>
+<em>Fahimeh Varzideh, Stanislovas S. Jankauskas, Pasquale Mone, Urna Kansakar, <u>Gaetano Santulli</u></em><br>
+<strong class="journal">FRONTIERS IN NEUROSCIENCE</strong>. 2026. <em>In press.</em>
+</li>
+
+<li data-title="Orforglipron: a comprehensive review of an oral small-molecule GLP-1 receptor agonist">
+<strong>Orforglipron: a comprehensive review of an oral small-molecule GLP-1 receptor agonist for obesity and type 2 diabetes.</strong><br>
+<em>Urna Kansakar, Stanislovas S. Jankauskas, Shivangi Pande, Pasquale Mone, Fahimeh Varzideh, <u>Gaetano Santulli</u></em><br>
+<strong class="journal">INTERNATIONAL JOURNAL OF MOLECULAR SCIENCES</strong>. 2026. <em>In press.</em>
+</li>
+
+</ul>
 </div>
 
-<footer>
-  &copy; 2026 Prof. Gaetano Santulli
-</footer>
+<div id="publications">
+<p>Loading publications...</p>
+</div>
+
+<!-- ADDED SECTION -->
+<div style="text-align:center; margin:50px 0; animation: fadeInUp 1.2s ease-out forwards;">
+<h2>Covers of Journals where the Santulli Lab published</h2>
+<img src="cover.png" alt="Covers of Journals where the Santulli Lab published" style="max-width:100%; height:auto;">
+</div>
+
+<div class="page-counter">
+Page Visits: <span id="counter">0</span>
+</div>
+</div>
+
+<footer>&copy; 2026 Prof. Gaetano Santulli</footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById('nav-menu').classList.toggle('active');
-}
+function toggleMenu(){document.getElementById('nav-menu').classList.toggle('active');}
 
-/* Counter */
 let count = localStorage.getItem("pageCounter") || 5400;
 count++;
 localStorage.setItem("pageCounter", count);
@@ -324,7 +270,50 @@ const replacements = {
 };
 
 async function fetchPubMed() {
-  /* unchanged */
+  const esearch = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=${encodeURIComponent(query)}&retmode=json&usehistory=y`;
+  const s = await (await fetch(esearch)).json();
+  const webenv = s.esearchresult.webenv;
+  const key = s.esearchresult.querykey;
+  const total = parseInt(s.esearchresult.count);
+
+  let html = "<ul>";
+  let pubNumber = total;
+  const step = 200;
+
+  for (let i = total - step; i >= 0; i -= step) {
+    const efetch = `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&query_key=${key}&WebEnv=${webenv}&retstart=${i}&retmax=${step}&retmode=xml`;
+    const xml = new DOMParser().parseFromString(await (await fetch(efetch)).text(), "text/xml");
+
+    xml.querySelectorAll("PubmedArticle").forEach(a => {
+      const journalRaw = a.querySelector("Journal > Title")?.textContent.toUpperCase() || "";
+      if (journalRaw.includes("RESEARCH SQUARE")) return;
+
+      const journal = replacements[journalRaw] || journalRaw;
+      const pmid = a.querySelector("PMID")?.textContent;
+      const title = a.querySelector("ArticleTitle")?.textContent || "";
+      const year = a.querySelector("PubDate > Year")?.textContent || "n.d.";
+
+      const authors = [...a.querySelectorAll("Author")]
+        .map(x => `${x.querySelector("ForeName")?.textContent || ""} ${x.querySelector("LastName")?.textContent || ""}`)
+        .join(", ")
+        .replace(/Gaetano Santulli/g,"<u>Gaetano Santulli</u>");
+
+      const doi = [...a.querySelectorAll("ArticleId")]
+        .find(x => x.getAttribute("IdType") === "doi")?.textContent;
+
+      html += `
+<li>
+<strong>${pubNumber}) <a href="https://pubmed.ncbi.nlm.nih.gov/${pmid}/" target="_blank">${title}</a></strong><br>
+<em>${authors}</em><br>
+<strong class="journal">${journal}</strong>. ${year}.
+${doi ? `<br>DOI: <a href="https://doi.org/${doi}" target="_blank">${doi}</a>` : ""}
+</li>`;
+      pubNumber--;
+    });
+  }
+
+  html += "</ul>";
+  document.getElementById("publications").innerHTML = html;
 }
 
 fetchPubMed();
