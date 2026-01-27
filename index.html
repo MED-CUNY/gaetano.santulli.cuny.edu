@@ -1,15 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-   <meta name="google-site-verification" content="fireegA2wn-R0UDPISA6TqvUxeJ6w0X0CX9I-o8AZmw" />
 <head>
 <meta charset="UTF-8">
-<title>SANTULLI LAB - Prof. Gaetano Santulli, MD, PHD, FAHA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google site verification -->
+<meta name="google-site-verification" content="fireegA2wn-R0UDPISA6TqvUxeJ6w0X0CX9I-o8AZmw" />
+
+<!-- SEO -->
+<title>SANTULLI LAB – Prof. Gaetano Santulli, MD, PhD, FAHA | Cardiovascular & Metabolic Research</title>
+<meta name="description" content="Explore the Santulli Lab led by Prof. Gaetano Santulli, MD, PhD, FAHA. Research on cardiovascular and metabolic diseases, publications, clinical work, team members, and academic contributions.">
+<link rel="canonical" href="https://med-cuny.github.io/gaetanosantulli/index.html">
+
+<!-- Favicon -->
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-   
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+<!-- Structured Data: Organization + Team + Publications + Funding -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Santulli Lab",
+      "url": "https://med-cuny.github.io/gaetanosantulli/",
+      "logo": "https://med-cuny.github.io/gaetanosantulli/favicon.ico",
+      "sameAs": [
+        "https://scholar.google.com/citations?user=IX4IYaEAAAAJ",
+        "https://pubmed.ncbi.nlm.nih.gov/"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Prof. Gaetano Santulli",
+        "honorificPrefix": "Prof.",
+        "jobTitle": "Professor of Cardiology",
+        "affiliation": "Santulli Lab",
+        "knowsAbout": ["Cardiovascular Disease","Metabolic Disease","Translational Medicine","Calcium Signaling","Diabetes"],
+        "url": "https://med-cuny.github.io/gaetanosantulli/team.html#pi"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Dr. Jessica Gambardella",
+      "jobTitle": "Assistant Professor",
+      "affiliation": "Santulli Lab",
+      "url": "https://med-cuny.github.io/gaetanosantulli/team.html#gambardella"
+    },
+    {
+      "@type": "Person",
+      "name": "Dr. Stanislovas S. Jankauskas",
+      "jobTitle": "Assistant Professor",
+      "affiliation": "Santulli Lab",
+      "url": "https://med-cuny.github.io/gaetanosantulli/team.html#jankauskas"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Dietary Supplements in Cardiovascular and Metabolic Diseases",
+      "author": "Gaetano Santulli",
+      "publisher": "MDPI",
+      "datePublished": "2024",
+      "url": "https://www.amazon.com/Dietary-Supplements-Cardiovascular-Metabolic-Diseases/dp/3725812950",
+      "isbn": "978-3-7258-1295-0"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Methods and Applications in Clinical and Translational Physiology",
+      "author": "Gaetano Santulli",
+      "publisher": "Frontiers",
+      "datePublished": "2023",
+      "url": "https://books.google.com/books/about/Methods_and_Applications_in_Clinical_and.html?id=t565EAAAQBAJ",
+      "isbn": "9782832520437"
+    },
+    {
+      "@type": "FundingScheme",
+      "name": "NIH Grants",
+      "funder": "National Institutes of Health (NIH)",
+      "description": "Research funding for cardiovascular and metabolic studies conducted in the Santulli Lab.",
+      "url": "https://www.nih.gov/"
+    }
+  ]
+}
+</script>
+
 <style>
 /* -------------------------
-   Reset & base styling
+   Reset & Base
 ------------------------- */
 body {
   font-family: Arial, sans-serif;
@@ -21,10 +97,10 @@ body {
 }
 
 /* -------------------------
-   Navigation bar
+   Navigation Bar
 ------------------------- */
 nav {
-  background-color: #00755E; /* Tropical Rain Forest */
+  background-color: #00755E;
   padding: 12px 24px;
   position: sticky;
   top: 0;
@@ -37,11 +113,12 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  justify-content: center; /* Center nav items */
   flex-wrap: wrap;
 }
 
 nav li {
-  margin-right: 22px;
+  margin: 0 15px;
 }
 
 nav a {
@@ -53,11 +130,39 @@ nav a {
 }
 
 nav a:hover {
-  color: #d0f0e8; /* subtle mint hover */
+  color: #d0f0e8;
+}
+
+/* Hamburger for mobile */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 24px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  nav li {
+    margin: 10px 0;
+  }
+  .hamburger {
+    display: block;
+  }
 }
 
 /* -------------------------
-   Hero section
+   Hero Section
 ------------------------- */
 .hero {
   text-align: center;
@@ -72,7 +177,7 @@ nav a:hover {
 }
 
 /* -------------------------
-   Page content
+   Page Content
 ------------------------- */
 .content {
   max-width: 900px;
@@ -109,7 +214,8 @@ footer {
 
 <!-- Navigation Bar -->
 <nav>
-  <ul>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul id="nav-menu">
     <li><a href="/gaetanosantulli/about.html">About</a></li>
     <li><a href="/gaetanosantulli/team.html">Team</a></li>
     <li><a href="/gaetanosantulli/publications.html">Publications</a></li>
@@ -122,18 +228,17 @@ footer {
   </ul>
 </nav>
 
-
 <!-- Hero Image -->
 <div class="hero">
-  <img src="hero.jpg" alt="Lab of Prof. Gaetano Santulli">
+  <img src="hero.jpg" alt="Laboratory of Prof. Gaetano Santulli, cardiovascular and metabolic research lab">
 </div>
 
 <!-- Page Content -->
 <div class="content">
   <h1>Welcome to the Lab of Prof. Gaetano Santulli</h1>
   <p>
-    This website provides information on research activities, team members,
-    funding, publications, clinical work, and academic contributions.
+    The Santulli Lab conducts cutting-edge research on cardiovascular and metabolic diseases.
+    Discover our team, funding sources, publications, clinical contributions, and academic achievements.
   </p>
 </div>
 
@@ -141,6 +246,12 @@ footer {
 <footer>
   &copy; 2026 Prof. Gaetano Santulli
 </footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('nav-menu').classList.toggle('active');
+}
+</script>
 
 </body>
 </html>
