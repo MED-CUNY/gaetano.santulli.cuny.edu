@@ -1,31 +1,133 @@
-
 <!DOCTYPE html>
 <html lang="en">
-   <meta name="google-site-verification" content="fireegA2wn-R0UDPISA6TqvUxeJ6w0X0CX9I-o8AZmw" />
 <head>
 <meta charset="UTF-8">
-<title>SANTULLI LAB - Prof. Gaetano Santulli, MD, PHD, FAHA</title>
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO Title & Description -->
+<title>Team - Santulli Lab | Prof. Gaetano Santulli</title>
+<meta name="description" content="Meet the team of the Santulli Lab, led by Prof. Gaetano Santulli. Our team conducts mechanistic and translational research in cardiovascular and metabolic diseases.">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://med-cuny.github.io/gaetanosantulli/team.html">
+
+<!-- Favicon -->
+<link rel="icon" href="/gaetanosantulli/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/gaetanosantulli/favicon.ico" type="image/x-icon">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4JTRMX9YXD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4JTRMX9YXD');
+</script>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Prof. Gaetano Santulli",
+      "jobTitle": "Full Professor of Medicine (Cardiology), Principal Investigator",
+      "image": "https://med-cuny.github.io/gaetanosantulli/santulli.jpg",
+      "url": "https://med-cuny.github.io/gaetanosantulli/about.html",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Santulli Lab"
+      },
+      "sameAs": [
+        "https://scholar.google.com/citations?user=IX4IYaEAAAAJ&hl=en",
+        "https://pubmed.ncbi.nlm.nih.gov"
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Dr. Jessica Gambardella",
+      "jobTitle": "Assistant Professor",
+      "image": "https://med-cuny.github.io/gaetanosantulli/gambardella.jpg",
+      "affiliation": {"@type": "Organization","name":"Santulli Lab"}
+    },
+    {
+      "@type": "Person",
+      "name": "Dr. Stanislovas S. Jankauskas",
+      "jobTitle": "Assistant Professor",
+      "image": "https://med-cuny.github.io/gaetanosantulli/jankauskas.jpg",
+      "affiliation": {"@type": "Organization","name":"Santulli Lab"}
+    },
+    {
+      "@type": "Person",
+      "name": "Dr. Fahimeh Varzideh",
+      "jobTitle": "Assistant Professor",
+      "image": "https://med-cuny.github.io/gaetanosantulli/varzideh.jpg",
+      "affiliation": {"@type": "Organization","name":"Santulli Lab"}
+    },
+    {
+      "@type": "Person",
+      "name": "Dr. Pasquale Mone",
+      "jobTitle": "Assistant Professor",
+      "image": "https://med-cuny.github.io/gaetanosantulli/mone.jpg",
+      "affiliation": {"@type": "Organization","name":"Santulli Lab"}
+    },
+    {
+      "@type": "Person",
+      "name": "Dr. Urna Kansakar",
+      "jobTitle": "Postdoctoral Fellow",
+      "image": "https://med-cuny.github.io/gaetanosantulli/kansakar.jpg",
+      "affiliation": {"@type": "Organization","name":"Santulli Lab"}
+    },
+    {
+      "@type": "Person",
+      "name": "Dr. Shivangi Pande",
+      "jobTitle": "Postdoctoral Fellow",
+      "image": "https://med-cuny.github.io/gaetanosantulli/pande.jpg",
+      "affiliation": {"@type": "Organization","name":"Santulli Lab"}
+    },
+    {
+      "@type": "Person",
+      "name": "Scott Wilson","jobTitle":"MD Resident"
+    },
+    {"@type":"Person","name":"Roberta Avvisato","jobTitle":"PhD Student"},
+    {"@type":"Person","name":"Mahaba Eiwaz","jobTitle":"PhD Student"},
+    {"@type":"Person","name":"Ayobami Adebayo","jobTitle":"MD Student"},
+    {"@type":"Person","name":"Ghaith Al Tibi","jobTitle":"MD Student"},
+    {"@type":"Person","name":"Federica A. Cerasuolo","jobTitle":"PhD Student"},
+    {"@type":"Person","name":"Vasvi Bhutani","jobTitle":"MD Student"},
+    {"@type":"Person","name":"Cheryl Tung","jobTitle":"MD Student"},
+    {"@type":"Person","name":"Emanuele Farroni","jobTitle":"Visiting MD Student"},
+    {"@type":"Person","name":"Nicole Romero","jobTitle":"Intern"},
+    {"@type":"Person","name":"Marco Savino","jobTitle":"MD Student"},
+    {"@type":"Person","name":"Urja Jain","jobTitle":"Intern"},
+    {"@type":"Person","name":"Yifei Qin","jobTitle":"Intern"},
+    {"@type":"Person","name":"Luigi Savino","jobTitle":"MD Student"},
+    {"@type":"Person","name":"Lauren Soderquist","jobTitle":"Intern"},
+    {"@type":"Person","name":"Brandon Wang","jobTitle":"MD Student"}
+  ]
+}
+</script>
+
 <style>
 /* -------------------------
-   Reset & base styling
+   Base styling
 ------------------------- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  line-height: 1.7;
   background-color: #000000;
   color: #eaeaea;
 }
 
 /* -------------------------
-   Navigation bar
+      Navigation bar
 ------------------------- */
 nav {
-  background-color: #00755E; /* Tropical Rain Forest */
+  background-color: #00755E;
   padding: 12px 24px;
   position: sticky;
   top: 0;
@@ -39,6 +141,7 @@ nav ul {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 nav li {
@@ -50,46 +153,140 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
-  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #d0f0e8; /* subtle mint hover */
+  color: #d0f0e8;
 }
 
-/* -------------------------
-   Hero section
-------------------------- */
-.hero {
-  text-align: center;
-  margin-top: 50px;
+/* Hamburger */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 24px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
 }
 
-.hero img {
-  max-width: 80%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(255,255,255,0.1);
+/* Mobile */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  nav a {
+    font-size: 16px;
+  }
 }
 
 /* -------------------------
    Page content
 ------------------------- */
 .content {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 60px auto;
   padding: 0 24px;
   text-align: center;
 }
 
-.content h1 {
+h1 {
+  margin-bottom: 40px;
   color: #ffffff;
-  margin-bottom: 20px;
+  font-size: 32px;
 }
 
-.content p {
+/* -------------------------
+   Team layout
+------------------------- */
+.team-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.team-member {
+  background-color: #111111;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+  flex: 0 0 auto;
+  transition: transform 0.2s;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+.pi-member {
+  width: 300px;
+}
+
+.line2-member, .line3-member {
+  width: 220px;
+}
+
+.member-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  color: #36d1dc;
+}
+
+.member-role {
+  font-size: 0.9em;
   color: #cccccc;
-  font-size: 16px;
+}
+
+.member-name-only {
+  font-weight: bold;
+  color: #36d1dc;
+  font-size: 1em;
+}
+
+.member-role-only {
+  font-size: 0.85em;
+  color: #d0d0d0;
+}
+
+.hindex-link {
+  color: #36d1dc;
+  text-decoration: none;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease, transform 0.3s ease, text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.hindex-link.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hindex-link:hover {
+  transform: scale(1.3);
+  text-shadow: 0 0 12px #36f0e0, 0 0 20px #36f0e0;
+  color: #a0f0e0;
 }
 
 /* -------------------------
@@ -100,8 +297,26 @@ footer {
   padding: 20px;
   background-color: #00755E;
   color: #e6fff8;
-  margin-top: 60px;
+  margin-top: 40px;
   font-size: 14px;
+}
+
+/* -------------------------
+   Responsive
+------------------------- */
+@media (max-width: 1024px) {
+  .pi-member { width: 260px; }
+  .line2-member, .line3-member { width: 180px; }
+  .team-member { padding: 12px; }
+}
+
+@media (max-width: 768px) {
+  .team-row { flex-direction: column; align-items: center; }
+  .pi-member, .line2-member, .line3-member { width: 90%; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 26px; }
 }
 </style>
 </head>
@@ -110,7 +325,8 @@ footer {
 
 <!-- Navigation Bar -->
 <nav>
-  <ul>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul id="nav-menu">
     <li><a href="/gaetanosantulli/about.html">About</a></li>
     <li><a href="/gaetanosantulli/team.html">Team</a></li>
     <li><a href="/gaetanosantulli/publications.html">Publications</a></li>
@@ -123,25 +339,127 @@ footer {
   </ul>
 </nav>
 
-
-<!-- Hero Image -->
-<div class="hero">
-  <img src="hero.jpg" alt="Lab of Prof. Gaetano Santulli">
-</div>
-
-<!-- Page Content -->
 <div class="content">
-  <h1>Welcome to the Lab of Prof. Gaetano Santulli</h1>
-  <p>
-    This website provides information on research activities, team members,
-    funding, publications, clinical work, and academic contributions.
-  </p>
+  <h1>Meet Our Team</h1>
+
+  <!-- PI Row -->
+  <div class="team-row" id="pi-row"></div>
+
+  <!-- Line 2 -->
+  <div class="team-row" id="line2-row"></div>
+
+  <!-- Line 3 -->
+  <div class="team-row" id="line3-row"></div>
+
+  <!-- Line 4+ -->
+  <div class="team-row" id="line4plus-row"></div>
 </div>
 
-<!-- Footer -->
 <footer>
   &copy; 2026 Prof. Gaetano Santulli
 </footer>
 
+<script>
+// ---------------------------
+// PI
+const pi = {
+  name: "Prof. Gaetano Santulli",
+  role1: "Full Professor of Medicine (Cardiology)",
+  role2: "Principal Investigator",
+  hIndex: 106,
+  photo: "santulli.jpg"
+};
+
+const piRow = document.getElementById('pi-row');
+piRow.innerHTML = `
+  <div class="team-member pi-member">
+    <img src="${pi.photo}" alt="${pi.name}" style="width:140px;height:140px;border-radius:6px;margin-bottom:12px;">
+    <div class="member-name">${pi.name}</div>
+    <div class="member-role">${pi.role1}</div>
+    <div class="member-role">${pi.role2}</div>
+    <div class="member-role">H-index: <a href="https://scholar.google.com/citations?user=IX4IYaEAAAAJ&hl=en" target="_blank" class="hindex-link">${pi.hIndex}</a></div>
+  </div>
+`;
+
+const hIndexLink = piRow.querySelector('.hindex-link');
+setTimeout(() => { hIndexLink.classList.add('show'); }, 100);
+
+// ---------------------------
+// Line 2
+const line2Members = [
+  {name: "Dr. Jessica Gambardella", role: "Assistant Professor", photo:"gambardella.jpg"},
+  {name: "Dr. Stanislovas S. Jankauskas", role: "Assistant Professor", photo:"jankauskas.jpg"},
+  {name: "Dr. Fahimeh Varzideh", role: "Assistant Professor", photo:"varzideh.jpg"}
+];
+
+const line2Row = document.getElementById('line2-row');
+line2Members.forEach(m => {
+  line2Row.innerHTML += `
+    <div class="team-member line2-member">
+      <img src="${m.photo}" alt="${m.name}" style="width:110px;height:110px;border-radius:6px;margin-bottom:12px;">
+      <div class="member-name">${m.name}</div>
+      <div class="member-role">${m.role}</div>
+    </div>
+  `;
+});
+
+// ---------------------------
+// Line 3
+const line3Members = [
+  {name: "Dr. Pasquale Mone", role: "Assistant Professor", photo:"mone.jpg"},
+  {name: "Dr. Urna Kansakar", role: "Postdoctoral Fellow", photo:"kansakar.jpg"},
+  {name: "Dr. Shivangi Pande", role: "Postdoctoral Fellow", photo:"pande.jpg"}
+];
+
+const line3Row = document.getElementById('line3-row');
+line3Members.forEach(m => {
+  line3Row.innerHTML += `
+    <div class="team-member line3-member">
+      <img src="${m.photo}" alt="${m.name}" style="width:110px;height:110px;border-radius:6px;margin-bottom:12px;">
+      <div class="member-name">${m.name}</div>
+      <div class="member-role">${m.role}</div>
+    </div>
+  `;
+});
+
+// ---------------------------
+// Line 4+
+const line4plusMembers = [
+  {name:"Scott Wilson", role:"MD Resident"},
+  {name:"Roberta Avvisato", role:"PhD Student"},
+  {name:"Mahaba Eiwaz", role:"PhD Student"},
+  {name:"Ayobami Adebayo", role:"MD Student"},
+  {name:"Ghaith Al Tibi", role:"MD Student"},
+  {name:"Federica A. Cerasuolo", role:"PhD Student"},
+  {name:"Vasvi Bhutani", role:"MD Student"},
+  {name:"Cheryl Tung", role:"MD Student"},
+  {name:"Emanuele Farroni", role:"Visiting MD Student"},
+  {name:"Nicole Romero", role:"Intern"},
+  {name:"Marco Savino", role:"MD Student"},
+  {name:"Urja Jain", role:"Intern"},
+  {name:"Yifei Qin", role:"Intern"},
+  {name:"Luigi Savino", role:"MD Student"},
+  {name:"Lauren Soderquist", role:"Intern"},
+  {name:"Brandon Wang", role:"MD Student"}
+];
+
+const line4plusRow = document.getElementById('line4plus-row');
+line4plusMembers.forEach(m => {
+  line4plusRow.innerHTML += `
+    <div class="team-member" style="width:220px;">
+      <div class="member-name-only">${m.name}</div>
+      <div class="member-role-only">${m.role}</div>
+    </div>
+  `;
+});
+
+// ---------------------------
+// Hamburger toggle
+function toggleMenu() {
+  document.getElementById('nav-menu').classList.toggle('active');
+}
+</script>
+
 </body>
 </html>
+
